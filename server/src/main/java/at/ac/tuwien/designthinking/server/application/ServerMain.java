@@ -1,4 +1,4 @@
-package at.ac.tuwien.designthinking.application;
+package at.ac.tuwien.designthinking.server.application;
 
 
 
@@ -6,17 +6,17 @@ package at.ac.tuwien.designthinking.application;
  * Created by Bastian on 27.05.2018.
  */
 
+import at.ac.tuwien.designthinking.common.service.IngridientService;
+import at.ac.tuwien.designthinking.common.service.RecipeService;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.commons.cli.*;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiServiceExporter;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -35,7 +35,7 @@ import java.sql.SQLException;
  * Opens ports for connection
  */
 @Configuration
-@ComponentScan("at.ac.tuwien.designthinking")
+@ComponentScan("at.ac.tuwien.designthinking.server")
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class ServerMain implements WebApplicationInitializer{
     private static int WEB_PORT = 8080;
@@ -68,6 +68,31 @@ public class ServerMain implements WebApplicationInitializer{
         dataSource.setPassword("");
 
         return dataSource;
+    }
+
+    // Für RMI Datenübertragungsverbindungen sieht die Erstellung von Beans immer so aus also einfach in common einen Service erstellen und dann
+    // mit RMI hier und im client verbinden implementation vom service im service ordner von Server und wichtig das @service ober der klasse
+    // nicht vergessen
+    @Bean(destroyMethod = "destroy")
+    public RmiServiceExporter registerIngridientService(IngridientService ingridientService) {
+        RmiServiceExporter rmiServiceExporter = new RmiServiceExporter();
+        rmiServiceExporter.setServiceName("IngriedientService");
+        rmiServiceExporter.setService(ingridientService);
+        rmiServiceExporter.setServiceInterface(IngridientService.class);
+        rmiServiceExporter.setRegistryPort(RMI_PORT);
+
+        return rmiServiceExporter;
+    }
+
+    @Bean(destroyMethod = "destroy")
+    public RmiServiceExporter registerRecipeService(RecipeService recipeService) {
+        RmiServiceExporter rmiServiceExporter = new RmiServiceExporter();
+        rmiServiceExporter.setServiceName("RecipeService");
+        rmiServiceExporter.setService(recipeService);
+        rmiServiceExporter.setServiceInterface(IngridientService.class);
+        rmiServiceExporter.setRegistryPort(RMI_PORT);
+
+        return rmiServiceExporter;
     }
 
     public static void main(String[] args) {
