@@ -89,7 +89,7 @@ public class ServerMain implements WebApplicationInitializer{
         RmiServiceExporter rmiServiceExporter = new RmiServiceExporter();
         rmiServiceExporter.setServiceName("RecipeService");
         rmiServiceExporter.setService(recipeService);
-        rmiServiceExporter.setServiceInterface(IngridientService.class);
+        rmiServiceExporter.setServiceInterface(RecipeService.class);
         rmiServiceExporter.setRegistryPort(RMI_PORT);
 
         return rmiServiceExporter;
