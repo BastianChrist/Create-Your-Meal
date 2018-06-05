@@ -1,11 +1,11 @@
-package at.ac.tuwien.designthinking.common.service;
+package at.ac.tuwien.designthinking.server.service;
 
 import java.util.List;
 
 /**
  * Created by Bastian on 27.05.2018.
  */
-public interface RecipeService<E> {
+public interface IngridientService<E> {
     /**
      * Returns an entity matching the unique id
      * @param id the id to be matched
@@ -22,7 +22,7 @@ public interface RecipeService<E> {
     public List<E> getAll() throws ServiceException;
 
     /**
-     * Returns all Recipes from a category
+     * Returns all ingridients from a category
      * @return a list of all entities from a specific category
      * @throws ServiceException
      */

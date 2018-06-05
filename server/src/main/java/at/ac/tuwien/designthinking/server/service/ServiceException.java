@@ -1,4 +1,4 @@
-package at.ac.tuwien.designthinking.common.service;
+package at.ac.tuwien.designthinking.server.service;
 
 /**
  * Created by Bastian on 27.05.2018.

@@ -1,7 +1,5 @@
 package at.ac.tuwien.designthinking.server.service;
 
-import at.ac.tuwien.designthinking.common.service.RecipeService;
-import at.ac.tuwien.designthinking.common.service.ServiceException;
 import at.ac.tuwien.designthinking.server.persistence.RecipeDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

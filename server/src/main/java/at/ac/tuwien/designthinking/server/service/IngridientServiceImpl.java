@@ -1,7 +1,5 @@
 package at.ac.tuwien.designthinking.server.service;
 
-import at.ac.tuwien.designthinking.common.service.IngridientService;
-import at.ac.tuwien.designthinking.common.service.ServiceException;
 import at.ac.tuwien.designthinking.server.persistence.IngridientDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
