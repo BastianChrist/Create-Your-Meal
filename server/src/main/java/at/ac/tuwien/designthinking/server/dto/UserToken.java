@@ -1,4 +1,4 @@
-package at.ac.tuwien.designthinking.server.domain;
+package at.ac.tuwien.designthinking.server.dto;
 
 /**
  * Created by Georg Edlinger on 31.05.18.

@@ -1,15 +1,12 @@
 package at.ac.tuwien.designthinking.server.controller;
 
-import at.ac.tuwien.designthinking.server.domain.User;
-import at.ac.tuwien.designthinking.server.domain.UserToken;
+import at.ac.tuwien.designthinking.server.dto.User;
+import at.ac.tuwien.designthinking.server.dto.UserToken;
 import at.ac.tuwien.designthinking.server.persistence.PersistenceException;
 import at.ac.tuwien.designthinking.server.persistence.UserDAO;
-import at.ac.tuwien.designthinking.server.persistence.h2.UserDAOH2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.sql.DataSource;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
