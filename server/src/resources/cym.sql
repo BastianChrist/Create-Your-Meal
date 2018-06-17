@@ -47,15 +47,16 @@ CREATE TABLE `RecipeHistory` (
 CREATE TABLE `Recipe` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
 	`name` varchar NOT NULL,
-	`type` varchar NOT NULL,
-	`diffuclty` varchar NOT NULL,
+	`type` varchar,
+	`difficulty` varchar NOT NULL,
 	`isWarm` BOOLEAN NOT NULL,
-	`time_needed` TIME NOT NULL,
+	`time_needed` VARCHAR NOT NULL,
 	`servings` INT NOT NULL,
 	`source` varchar NOT NULL,
-	`dateAdded` DATETIME NOT NULL,
+	`dateAdded` DATETIME,
 	`instructions` varchar NOT NULL,
-	`recipePicture` blob NOT NULL,
+	`recipePicture` blob,
+	`ingredients` VARCHAR NOT NULL,
 	PRIMARY KEY (`ID`)
 );
 
