@@ -1,18 +1,3 @@
-CREATE TABLE `Recipe` (
-	`ID` INT NOT NULL AUTO_INCREMENT,
-	`name` varchar NOT NULL,
-	`type` varchar,
-	`difficulty` varchar NOT NULL,
-	`isWarm` BOOLEAN NOT NULL,
-	`time_needed` VARCHAR NOT NULL,
-	`servings` INT NOT NULL,
-	`source` varchar NOT NULL,
-	`dateAdded` DATETIME,
-	`instructions` varchar NOT NULL,
-	`recipePicture` blob,
-	`ingredients` VARCHAR NOT NULL,
-	PRIMARY KEY (`ID`)
-);
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
 VALUES('Palatschinken Grundrezept','1','TRUE','5 - 15','4','ichkoche.at','Für das Palatschinken Grundrezept den Teig zubereiten. Dafür die Eier aufschlagen und gut verquirlen. Die Milch mit dem Mehl rasch glatt rühren, die Eier einmengen und alles mit einer Prise Salz versehen. Die geschmolzene Butter langsam unterrühren. Sollten im Palatschinkenteig Mehlklumpen sein, den Teig durch ein großes Sieb streichen.
 Eine flache Pfanne (ideal sind Palatschinken-Pfannen) erhitzen und etwas Butter zerlassen. Mit einem Schöpflöffel soviel Teigmasse einfüllen, dass der Boden gerade dünn bedeckt ist. In die Mitte einleeren und durch Herumschwenken der Pfanne gleichmäßig verteilen.

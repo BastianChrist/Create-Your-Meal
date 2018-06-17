@@ -63,7 +63,7 @@ CREATE TABLE `Recipe` (
 CREATE TABLE `RecipeIngredients` (
 	`ID` BINARY NOT NULL AUTO_INCREMENT,
 	`recipeId` INT NOT NULL AUTO_INCREMENT,
-	`amount` BINARY NOT NULL ,
+	`amount` VARCHAR NOT NULL ,
 	`ingredientId` INT NOT NULL ,
 	PRIMARY KEY (`ID`)
 );
