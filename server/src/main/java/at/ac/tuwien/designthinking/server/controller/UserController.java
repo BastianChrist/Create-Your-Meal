@@ -4,6 +4,8 @@ import at.ac.tuwien.designthinking.server.dto.User;
 import at.ac.tuwien.designthinking.server.dto.UserToken;
 import at.ac.tuwien.designthinking.server.persistence.PersistenceException;
 import at.ac.tuwien.designthinking.server.persistence.UserDAO;
+import at.ac.tuwien.designthinking.server.service.ServiceException;
+import at.ac.tuwien.designthinking.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,10 +17,10 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    private UserDAO userDAO;
+    private UserService userService;
     @Autowired
-    public UserController (UserDAO userDAO){
-        this.userDAO = userDAO;
+    public UserController (UserService userService){
+        this.userService = userService;
     }
 
     @PostMapping("/login")
@@ -29,13 +31,26 @@ public class UserController {
 
 
     @GetMapping("/users")
-    public List<User> users(){
-
+    public List<User> getUsers(){
         try {
-            return userDAO.readUserAccounts();
-        } catch (PersistenceException e) {
-            e.printStackTrace();
+            return userService.getUsers();
+        } catch (ServiceException e) {
+            e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
         }
         return null;
     }
+
+    @GetMapping("/users/{userId}")
+    public User getUser(@PathVariable("userId") int userId){
+        try {
+            return userService.getUser(userId);
+        } catch (ServiceException e) {
+            e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
+        }
+        return null;
+    }
+
+
+
+
 }

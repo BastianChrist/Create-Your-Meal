@@ -1,6 +1,6 @@
 package at.ac.tuwien.designthinking.server.persistence.h2;
 
-import at.ac.tuwien.designthinking.server.persistence.IngridientDAO;
+import at.ac.tuwien.designthinking.server.persistence.IngredientDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -11,12 +11,12 @@ import java.sql.SQLException;
  * Created by Bastian on 27.05.2018.
  */
 @Repository
-public class IngridientDAOH2 extends PersistenceH2 implements IngridientDAO {
+public class IngredientDAOH2 extends PersistenceH2 implements IngredientDAO {
 
 
 
     @Autowired
-    public IngridientDAOH2(DataSource dataSource)throws SQLException{
+    public IngredientDAOH2(DataSource dataSource)throws SQLException{
         connection = dataSource.getConnection();
     }
 }

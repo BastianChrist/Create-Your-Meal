@@ -1,6 +1,5 @@
 package at.ac.tuwien.designthinking.server.persistence.h2;
 
-import at.ac.tuwien.designthinking.server.persistence.IngridientDAO;
 import at.ac.tuwien.designthinking.server.persistence.RecipeDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

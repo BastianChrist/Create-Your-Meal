@@ -1,5 +1,6 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import at.ac.tuwien.designthinking.server.dto.Recipe;
 import at.ac.tuwien.designthinking.server.persistence.RecipeDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,17 +24,17 @@ public class RecipeServiceImpl implements RecipeService {
 
     //TODO
     @Override
-    public Object getById(int id) throws ServiceException {
+    public Recipe getById(int id) throws ServiceException {
         return null;
     }
 
     @Override
-    public List getAll() throws ServiceException {
+    public List<Recipe> getAll() throws ServiceException {
         return null;
     }
 
     @Override
-    public List getByCategory() throws ServiceException {
+    public List<Recipe> getByCategory() throws ServiceException {
         return null;
     }
 }
