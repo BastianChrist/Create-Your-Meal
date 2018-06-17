@@ -1,5 +1,6 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import at.ac.tuwien.designthinking.server.dto.Context;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
 import at.ac.tuwien.designthinking.server.persistence.RecipeDAO;
 import org.slf4j.Logger;
@@ -29,7 +30,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public List<Recipe> getAll() throws ServiceException {
+    public List<Recipe> getAll(Context context) throws ServiceException {
         return null;
     }
 

@@ -1,5 +1,6 @@
 package at.ac.tuwien.designthinking.server.controller;
 
+import at.ac.tuwien.designthinking.server.dto.Context;
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
 import at.ac.tuwien.designthinking.server.service.IngredientService;
@@ -8,6 +9,7 @@ import at.ac.tuwien.designthinking.server.service.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -24,9 +26,9 @@ public class RecipeController {
     }
 
     @GetMapping("/recipes")
-    public List<Recipe> getRecipes(){
+    public List<Recipe> getRecipes(@RequestBody Context context){
         try {
-            return recipeService.getAll();
+            return recipeService.getAll(context);
         } catch (ServiceException e) {
             e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
         }

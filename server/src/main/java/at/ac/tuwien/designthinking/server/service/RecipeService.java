@@ -1,5 +1,6 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import at.ac.tuwien.designthinking.server.dto.Context;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public interface RecipeService {
      * @return a list of all entities
      * @throws ServiceException if unexpected exception occured, contains descriptive and publicly displayable message
      */
-    public List<Recipe> getAll() throws ServiceException;
+    public List<Recipe> getAll(Context context) throws ServiceException;
 
     /**
      * Returns all Recipes from a category
