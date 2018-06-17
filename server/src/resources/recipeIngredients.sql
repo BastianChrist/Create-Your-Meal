@@ -349,130 +349,262 @@ VALUES ('16','53','nach Gefühl');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
 VALUES ('16','21','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','103','300g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','2','2 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','83','125g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','104','2 EL (gerieben)');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','105','250g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','106','1/2 Stange');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','107','1 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','10','1 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','140','frische');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','39','frischer');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','27','frischer');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','5','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','21','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('17','108','50g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','109','2 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','110','200g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','111','50g geriebenen');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','37','1 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','25','1 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','112','2 EL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','113','2 EL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','17','2 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('18','47','zum Braten');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','7','1 kg. Rind');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','84','250g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','58','3');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','10','1 große');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','114','1 Dose');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','115','1-2 TL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','28','2 TL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','116','1');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','27','1/2 TL gehackter');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','19','2 TL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','117','1/2 TL gehackter');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','21','1/2 TL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','5','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','93','2 EL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('19','118','300ml');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('20','10','2 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('20','7','600g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('20','141','4 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('20','11','3 Zehen');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('20','5','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('20','21','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('21','119','50g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('21','5','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('21','3','350 ml');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('21','76','1 EL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('21','120','1 EL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('21','121','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','2','4 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','122','40g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','123','150ml');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','1','100g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','5','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','142','zum Braten');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','63','nach belieben');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','124','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('22','121','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('23','1','260g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('23','142','250g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('23','125','250g');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('23','2','1 Stk.');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
+VALUES ('23','121','einige Tropfen');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('23','126','nach Geschmack');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('24','2','4 Stk.');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('24','142','zum Andünsten');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('24','10','1 Stk. feingehackt');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('24','5','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('24','21','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('24','39','fein gehackter');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('24','127','nach Gefühl');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','143','1 Stk.');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','31','1 Stk.');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','23','1 Stk.');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','24','1 Stk.');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','128','5 Stk.');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','129','2 Dosen');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','10','1/2 ');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','130','1 Schuss');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','8','1 Schuss');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','11','2 Zehen');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','102','1 Schuss');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','5','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('25','21','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('26','51','500g (gekochte und passierte)');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('26','1','5 EL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('26','5','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('26','2','1 Stk.');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('26','10','100g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('26','140','1 EL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('26','142','2 EL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','30','230g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','8','4 EL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','34','80g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','39','1 Bund');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','131','250g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','132','450g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','133','75g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','40','150g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','134','2 Handvoll');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','5','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('27','21','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('28','135','1');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('28','10','1/2');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('28','19','1 EL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('28','116','1');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('28','27','2 Zweige');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('28','11','6-7 Zehen');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('28','21','Nach gefühl');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('28','5','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','136','500g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','137','350g');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','10','2 Stk.');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','46','1/2 Becher');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','96','1/2 Becher');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','5','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','13','nach Geschmack');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','140','frische');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','8','1 EL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','21','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('29','101','Nach Geschmack');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('30','138','2 kg');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('30','5','1 EL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('30','19','1 EL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('30','21','1/2 TL');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('30','11','30g gehackter');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('30','47','50ml');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('30','115','1 Prise');
+INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
+VALUES ('30','102','1 TL');

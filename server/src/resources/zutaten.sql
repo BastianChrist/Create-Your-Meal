@@ -138,9 +138,6 @@ INSERT INTO INGREDIENT (name) VALUES ('Lachs');
 INSERT INTO INGREDIENT (name) VALUES ('Schweinsrippchen');
 INSERT INTO INGREDIENT (name) VALUES ('Volkornbrot');
 INSERT INTO INGREDIENT (name) VALUES ('Petersilie');
-
-
-
-
-
-
+INSERT INTO INGREDIENT (name) VALUES ('scharfe Paprika');
+INSERT INTO INGREDIENT (name) VALUES ('Butter');
+INSERT INTO INGREDIENT (name) VALUES ('Salat');
