@@ -33,6 +33,7 @@ CREATE TABLE `Allergen` (
 CREATE TABLE `Ingredient` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
 	`name` varchar NOT NULL,
+	`category` VARCHAR NOT NULL;
 	PRIMARY KEY (`ID`)
 );
 

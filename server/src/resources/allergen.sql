@@ -1,0 +1,14 @@
+INSERT INTO Allergen(name,code)VALUES ('Glutenhaltiges Getreide','A');
+INSERT INTO Allergen(name,code)VALUES ('Krebstiere und daraus gewonnene Erzeugnisse','B');
+INSERT INTO Allergen(name,code)VALUES ('Eier und Geflügel und daraus gewonnene Erzeugnisse','C');
+INSERT INTO Allergen(name,code)VALUES ('Fisch und daraus gewonnene Erzeugnisse (ausser Fischgelatine)','D');
+INSERT INTO Allergen(name,code)VALUES ('Erdnüsse und daraus gewonnene Erzeugnisse','E');
+INSERT INTO Allergen(name,code)VALUES ('Sojabohnen und daraus gewonnene Erzeugnisse','F');
+INSERT INTO Allergen(name,code)VALUES ('Milch von Säugetieren und Milcherzeugnisse (inklusive Laktose)','G');
+INSERT INTO Allergen(name,code)VALUES ('Schalenfrüchte und daraus gewonnene Erzeugnisse','H');
+INSERT INTO Allergen(name,code)VALUES ('Sellerie und daraus gewonnene Erzeugnisse','L');
+INSERT INTO Allergen(name,code)VALUES ('Senf und daraus gewonnene Erzeugnisse','M');
+INSERT INTO Allergen(name,code)VALUES ('Sesamsamen und daraus gewonnene Erzeugnisse','N');
+INSERT INTO Allergen(name,code)VALUES ('Schwefeldioxid und Sulfite','O');
+INSERT INTO Allergen(name,code)VALUES ('Lupinen und daraus gewonnene Erzeugnisse','P');
+INSERT INTO Allergen(name,code)VALUES ('Weichtiere wie Schnecken, Muscheln, Tintenfische und daraus gewonnene Erzeugnisse','R');
