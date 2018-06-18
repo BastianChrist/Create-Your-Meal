@@ -1,11 +1,9 @@
 package at.ac.tuwien.designthinking.server.controller;
 
 import at.ac.tuwien.designthinking.server.dto.Context;
-import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
-import at.ac.tuwien.designthinking.server.service.IngredientService;
-import at.ac.tuwien.designthinking.server.service.RecipeService;
-import at.ac.tuwien.designthinking.server.service.ServiceException;
+import at.ac.tuwien.designthinking.server.service.interfaces.RecipeService;
+import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

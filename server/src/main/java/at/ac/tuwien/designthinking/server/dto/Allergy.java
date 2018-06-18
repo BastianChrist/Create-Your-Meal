@@ -3,17 +3,15 @@ package at.ac.tuwien.designthinking.server.dto;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Created by schurli on 17.06.18.
- */
 @Entity
-public class Allergen {
+public class Allergy {
 
     @Id
     private int ID;
-    private String name;
-    private String code;
 
+    private String name;
+
+   private int allergenid;
 
     public int getID() {
         return ID;
@@ -31,11 +29,11 @@ public class Allergen {
         this.name = name;
     }
 
-    public String getCode() {
-        return code;
+    public int getAllergenid() {
+        return allergenid;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setAllergenid(int allergenid) {
+        this.allergenid = allergenid;
     }
 }

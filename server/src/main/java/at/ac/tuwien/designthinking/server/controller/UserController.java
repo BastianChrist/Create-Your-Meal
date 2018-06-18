@@ -2,10 +2,10 @@ package at.ac.tuwien.designthinking.server.controller;
 
 import at.ac.tuwien.designthinking.server.dto.Allergen;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
-import at.ac.tuwien.designthinking.server.dto.User;
+import at.ac.tuwien.designthinking.server.dto.UserAccount;
 import at.ac.tuwien.designthinking.server.dto.UserToken;
-import at.ac.tuwien.designthinking.server.service.ServiceException;
-import at.ac.tuwien.designthinking.server.service.UserService;
+import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
+import at.ac.tuwien.designthinking.server.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,14 +24,14 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public UserToken login(@RequestBody User user)
+    public UserToken login(@RequestBody UserAccount user)
     {
         return new UserToken(user.getFirstName());
     }
 
 
     @GetMapping("/users")
-    public List<User> getUsers(){
+    public List<UserAccount> getUsers(){
         try {
             return userService.getUsers();
         } catch (ServiceException e) {
@@ -41,7 +41,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{userId}")
-    public User getUser(@PathVariable("userId") int userId){
+    public UserAccount getUser(@PathVariable("userId") int userId){
         try {
             return userService.getUser(userId);
         } catch (ServiceException e) {

@@ -1,8 +1,9 @@
-package at.ac.tuwien.designthinking.server.service;
+package at.ac.tuwien.designthinking.server.service.interfaces;
 
 import at.ac.tuwien.designthinking.server.dto.Allergen;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
-import at.ac.tuwien.designthinking.server.dto.User;
+import at.ac.tuwien.designthinking.server.dto.UserAccount;
+import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 
 import java.util.List;
 
@@ -11,11 +12,12 @@ import java.util.List;
  */
 public interface UserService {
 
-    List<User> getUsers() throws ServiceException;
+    List<UserAccount> getUsers() throws ServiceException;
 
-    User getUser(int userId) throws ServiceException;
+    UserAccount getUser(int userId) throws ServiceException;
 
     List<Allergen>  getUserAllergens(int userId) throws ServiceException;
+
     List<Allergen>  addUserAllergen(int userId, Allergen allergen) throws ServiceException;
 
     void  deleteUserAllergen(int userId, int allergenId) throws ServiceException;

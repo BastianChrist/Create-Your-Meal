@@ -1,7 +1,10 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import at.ac.tuwien.designthinking.server.dao.IngredientDAO;
+import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
-import at.ac.tuwien.designthinking.server.persistence.IngredientDAO;
+import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
+import at.ac.tuwien.designthinking.server.service.interfaces.IngredientService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +18,9 @@ import java.util.List;
 @Service
 public class IngredientServiceImpl implements IngredientService {
     private static final Logger LOGGER = LoggerFactory.getLogger(IngredientService.class);
-    private static IngredientDAO ingredientDAO;
+
+    @Autowired
+    private  IngredientDAO ingredientDAO;
 
     @Autowired
     public IngredientServiceImpl(IngredientDAO ingredientDAO){this.ingredientDAO = ingredientDAO;}
@@ -23,12 +28,20 @@ public class IngredientServiceImpl implements IngredientService {
     //TODO
     @Override
     public Ingredient getById(int id) throws ServiceException {
-        return null;
+        try {
+            return ingredientDAO.findIngredientById(id);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override
     public List<Ingredient> getAll() throws ServiceException {
-        return null;
+        try {
+            return ingredientDAO.findAll();
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override

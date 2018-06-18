@@ -1,7 +1,9 @@
-package at.ac.tuwien.designthinking.server.service;
+package at.ac.tuwien.designthinking.server.service.interfaces;
 
 import at.ac.tuwien.designthinking.server.dto.Context;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
+import at.ac.tuwien.designthinking.server.dto.RecipeHistory;
+import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 
 import java.util.List;
 
@@ -30,4 +32,7 @@ public interface RecipeService {
      * @throws ServiceException
      */
     public List<Recipe> getByCategory() throws ServiceException;
+
+    public void addHistoryEntry (RecipeHistory history, Integer userId) throws ServiceException;
+
 }

@@ -1,6 +1,7 @@
-package at.ac.tuwien.designthinking.server.service;
+package at.ac.tuwien.designthinking.server.service.interfaces;
 
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
+import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 
 import java.util.List;
 
