@@ -2,6 +2,7 @@ package at.ac.tuwien.designthinking.server.dao.interfaces;
 
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dto.Context;
+import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
 
 import java.util.List;
@@ -26,4 +27,6 @@ public interface IRecipeDAO extends IGenericDAO<Recipe,Integer>{
     //public List<Recipe> getByCategory() throws DaoException;
 
     public List<Recipe> getByContext(Context context) throws DaoException;
+
+    public List<Recipe> getRecipesByIngredient (Ingredient ingredient) throws DaoException;
 }

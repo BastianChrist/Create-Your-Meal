@@ -3,6 +3,7 @@ package at.ac.tuwien.designthinking.server.dao;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dao.interfaces.IRecipeDAO;
 import at.ac.tuwien.designthinking.server.dto.Context;
+import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
 import org.springframework.stereotype.Repository;
 
@@ -47,6 +48,23 @@ public class RecipeDAO extends GenericDAO<Recipe,Integer> implements IRecipeDAO 
         //Filterung in der Liste mittels Iterator?
 
         return null;
+    }
+
+    @Override
+    public List<Recipe> getRecipesByIngredient(Ingredient ingredient) throws DaoException {
+
+        if (ingredient == null) {
+            throw new DaoException("The ingredient argument is required");
+        }
+
+        try {
+            TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT r FROM RecipeIngredients ri,Recipe r WHERE ri.ingredientId = (:ingredientId) AND recipeId = r.id", Recipe.class);
+            q.setParameter("ingredientId", ingredient.getId());
+
+            return q.getResultList();
+        } catch (Exception ex) {
+            throw new DaoException(ex);
+        }
     }
 
 

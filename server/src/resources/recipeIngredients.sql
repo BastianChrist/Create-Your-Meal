@@ -1,11 +1,11 @@
-INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('1','1','150g');
-INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('1','2','2');
-INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('1','3','250ml');
-INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('1','4','1EL');
+INSERT INTO RecipeIngredients (Id,recipeId,ingredientId,amount)
+VALUES (1,'1','1','150g');
+INSERT INTO RecipeIngredients (id,recipeId,ingredientId,amount)
+VALUES (2,'1','2','2');
+INSERT INTO RecipeIngredients (id,recipeId,ingredientId,amount)
+VALUES (3,'1','3','250ml');
+INSERT INTO RecipeIngredients (id,recipeId,ingredientId,amount)
+VALUES (4,'1','4','1EL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
 VALUES ('1','5','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
