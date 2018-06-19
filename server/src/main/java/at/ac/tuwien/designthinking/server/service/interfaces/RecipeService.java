@@ -1,6 +1,7 @@
 package at.ac.tuwien.designthinking.server.service.interfaces;
 
 import at.ac.tuwien.designthinking.server.dto.Context;
+import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
 import at.ac.tuwien.designthinking.server.dto.RecipeHistory;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
@@ -34,5 +35,9 @@ public interface RecipeService {
     public List<Recipe> getByCategory() throws ServiceException;
 
     public void addHistoryEntry (RecipeHistory history, Integer userId) throws ServiceException;
+
+    public List<Recipe> getByContext(Context context)throws ServiceException;
+
+    public List<Recipe> getRecipesByIngredient(Ingredient ingredient) throws ServiceException;
 
 }

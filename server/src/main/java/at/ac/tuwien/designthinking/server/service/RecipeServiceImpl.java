@@ -69,4 +69,13 @@ public class RecipeServiceImpl implements RecipeService {
            throw new ServiceException(e);
         }
     }
+
+    @Override
+    public List<Recipe> getByContext(Context context)throws ServiceException{
+        try {
+            return recipeDAO.getByContext(context);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
 }

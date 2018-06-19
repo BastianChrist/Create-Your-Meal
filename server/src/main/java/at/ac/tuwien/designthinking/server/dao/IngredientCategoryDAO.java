@@ -22,4 +22,9 @@ public class IngredientCategoryDAO extends GenericDAO<IngredientCategory, Intege
             throw new DaoException(ex);
         }
     }
+
+    public IngredientCategory getCategory(int id){
+     //TODO
+        return null;
+    }
 }
