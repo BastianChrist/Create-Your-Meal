@@ -91,7 +91,7 @@ public class UserController {
     @GetMapping("/users/{userId}/favorites")
     public List<Recipe> getUserFavoritesRecipes(@PathVariable("userId") int userId){
         try {
-            return userService.addUserFavoriteRecipes(userId);
+            return userService.getUserFavoriteRecipes(userId);
         } catch (ServiceException e) {
             e.printStackTrace();
         }

@@ -30,6 +30,8 @@ public class Recipe {
 
     private String instructions;
 
+    private String ingredients;
+
     private String recipePicture; //TODO: Read Image
 
     public int getId() {
@@ -118,5 +120,13 @@ public class Recipe {
 
     public void setRecipePicture(String recipePicture) {
         this.recipePicture = recipePicture;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 }

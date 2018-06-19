@@ -1,9 +1,11 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import at.ac.tuwien.designthinking.server.dao.AllergenDAO;
 import at.ac.tuwien.designthinking.server.dao.IngredientCategoryDAO;
 import at.ac.tuwien.designthinking.server.dao.IngredientDAO;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dao.interfaces.IIngredientCategoryDAO;
+import at.ac.tuwien.designthinking.server.dto.Allergen;
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.IngredientCategory;
 import at.ac.tuwien.designthinking.server.dto.RecipeCategory;
@@ -30,6 +32,9 @@ public class IngredientServiceImpl implements IngredientService {
     private IngredientCategoryDAO ingredientCategoryDAO;
 
     @Autowired
+    private AllergenDAO allergenDAO;
+
+    @Autowired
     public IngredientServiceImpl(IngredientDAO ingredientDAO){this.ingredientDAO = ingredientDAO;}
 
     @Override
@@ -45,6 +50,15 @@ public class IngredientServiceImpl implements IngredientService {
     public List<Ingredient> getAll() throws ServiceException {
         try {
             return ingredientDAO.findAll();
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public List<Allergen> getAllAllergens() throws ServiceException {
+        try {
+            return allergenDAO.findAll();
         } catch (DaoException e) {
             throw new ServiceException(e);
         }

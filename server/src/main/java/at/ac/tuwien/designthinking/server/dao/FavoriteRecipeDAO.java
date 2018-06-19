@@ -21,8 +21,8 @@ public class FavoriteRecipeDAO extends GenericDAO<FavoriteRecipe, Integer> imple
         }
 
         try {
-            TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT r FROM FavoriteRecipe fr,Recipe r WHERE fr.id = (:id) AND fr.id = r.id", Recipe.class);
-            q.setParameter("id", userId);
+            TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT r FROM FavoriteRecipe fr,Recipe r WHERE fr.userId = (:userId) AND fr.recipeId = r.id", Recipe.class);
+            q.setParameter("userId", userId);
 
             return q.getResultList();
         } catch (Exception ex) {

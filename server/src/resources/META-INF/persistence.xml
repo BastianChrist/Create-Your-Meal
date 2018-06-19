@@ -6,7 +6,6 @@
     <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
         <class>at.ac.tuwien.designthinking.server.dto.UserAccount</class>
         <class>at.ac.tuwien.designthinking.server.dto.Allergen</class>
-        <class>at.ac.tuwien.designthinking.server.dto.Allergy</class>
         <class>at.ac.tuwien.designthinking.server.dto.UserAllergies</class>
         <class>at.ac.tuwien.designthinking.server.dto.Ingredient</class>
         <class>at.ac.tuwien.designthinking.server.dto.Recipe</class>

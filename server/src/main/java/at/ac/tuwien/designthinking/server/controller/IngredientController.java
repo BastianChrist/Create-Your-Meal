@@ -1,5 +1,6 @@
 package at.ac.tuwien.designthinking.server.controller;
 
+import at.ac.tuwien.designthinking.server.dto.Allergen;
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.IngredientCategory;
 import at.ac.tuwien.designthinking.server.service.interfaces.IngredientService;
@@ -47,6 +48,28 @@ public class IngredientController {
     public List<IngredientCategory> getIngredientCategories(){
         try {
             return ingredientService.getCategories();
+        } catch (ServiceException e) {
+            e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
+        }
+        return null;
+    }
+
+    @GetMapping("/ingredients/categories/{categoryName}")
+    public List<Ingredient> getIngredientsByCategory(@PathVariable("categoryName") String categoryName){
+        try {
+            IngredientCategory cat = new IngredientCategory();
+            cat.setName(categoryName);
+            return ingredientService.getByCategory(cat);
+        } catch (ServiceException e) {
+            e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
+        }
+        return null;
+    }
+
+    @GetMapping("/ingredients/allergens")
+    public List<Allergen> getAllergens(){
+        try {
+            return ingredientService.getAllAllergens();
         } catch (ServiceException e) {
             e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
         }

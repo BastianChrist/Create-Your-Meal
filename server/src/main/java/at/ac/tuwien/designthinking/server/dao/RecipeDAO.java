@@ -44,7 +44,7 @@ public class RecipeDAO extends GenericDAO<Recipe,Integer> implements IRecipeDAO 
         TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) ", Recipe.class);
         q.setParameter("isWarm", context.isWarm());
 
-        //FIlterung in der Liste mittels Iterator?
+        //Filterung in der Liste mittels Iterator?
 
         return null;
     }

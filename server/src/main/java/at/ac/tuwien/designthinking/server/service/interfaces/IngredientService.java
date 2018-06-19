@@ -1,5 +1,6 @@
 package at.ac.tuwien.designthinking.server.service.interfaces;
 
+import at.ac.tuwien.designthinking.server.dto.Allergen;
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.IngredientCategory;
 import at.ac.tuwien.designthinking.server.dto.RecipeCategory;
@@ -25,6 +26,13 @@ public interface IngredientService {
      * @throws ServiceException if unexpected exception occured, contains descriptive and publicly displayable message
      */
      List<Ingredient> getAll() throws ServiceException;
+
+    /**
+     * Returns a list of all allergens
+     * @return a list of all allergens
+     * @throws ServiceException if unexpected exception occured, contains descriptive and publicly displayable message
+     */
+     List<Allergen>getAllAllergens() throws ServiceException;
 
      public List<IngredientCategory> getCategories() throws ServiceException;
 

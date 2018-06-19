@@ -19,7 +19,7 @@ public class UserAllergyDAO extends GenericDAO<UserAllergies,Integer> implements
 
         try {
             TypedQuery<Allergen> q = this.getEntityManager()
-                    .createQuery("SELECT a.name, a.id FROM UserAllergies ua, Allergen a WHERE  ua.userId = (:userId) AND ua.allergyId=a.ID", Allergen.class);
+                    .createQuery("SELECT a FROM UserAllergies ua, Allergen a WHERE  ua.userId = (:userId) AND ua.allergyId=a.ID", Allergen.class);
             q.setParameter("userId", userId);
 
             return q.getResultList();

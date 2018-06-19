@@ -8,14 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 /**
  * Created by schurli on 15.06.18.
  */
+@RestController
 public class RecipeController {
 
+    @Autowired
     private RecipeService recipeService;
 
     @Autowired
@@ -24,9 +27,10 @@ public class RecipeController {
     }
 
     @GetMapping("/recipes")
-    public List<Recipe> getRecipes(@RequestBody Context context){
+    //public List<Recipe> getRecipes(@RequestBody Context context){ //TODO: Warum brauchen wir hier den Context?
+    public List<Recipe> getRecipes(){
         try {
-            return recipeService.getAll(context);
+            return recipeService.getAll(null);
         } catch (ServiceException e) {
             e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
         }
