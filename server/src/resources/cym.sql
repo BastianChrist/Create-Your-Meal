@@ -3,25 +3,19 @@ CREATE TABLE `UserAccount` (
 	`firstName` varchar(255) NOT NULL,
 	`lastName` varchar(255) NOT NULL,
 	`profilePicture` blob NOT NULL,
-	`email` varchar NOT NULL,
-	`password` varchar NOT NULL,
+	`email` varchar,
+	`password` varchar,
 	PRIMARY KEY (`ID`)
 );
 
 CREATE TABLE `UserAllergies` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
-	`userId` INT NOT NULL AUTO_INCREMENT,
-	`allergyId` INT NOT NULL AUTO_INCREMENT,
+	`userId` INT NOT NULL ,
+	`allergenId` INT NOT NULL ,
 	`dateAdded` DATETIME NOT NULL,
 	PRIMARY KEY (`ID`)
 );
 
-CREATE TABLE `Allergy` (
-	`ID` BINARY NOT NULL AUTO_INCREMENT,
-	`name` varchar NOT NULL,
-	`allergen` INT NOT NULL,
-	PRIMARY KEY (`ID`)
-);
 
 CREATE TABLE `Allergen` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
@@ -33,7 +27,8 @@ CREATE TABLE `Allergen` (
 CREATE TABLE `Ingredient` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
 	`name` varchar NOT NULL,
-	`category` VARCHAR NOT NULL;
+	`allergenId` INT NOT NULL,
+	`category` VARCHAR NOT NULL,
 	PRIMARY KEY (`ID`)
 );
 
@@ -62,21 +57,15 @@ CREATE TABLE `Recipe` (
 );
 
 CREATE TABLE `RecipeIngredients` (
-	`ID` BINARY NOT NULL AUTO_INCREMENT,
+	`ID` INT NOT NULL AUTO_INCREMENT,
 	`recipeId` INT NOT NULL AUTO_INCREMENT,
 	`amount` VARCHAR NOT NULL ,
 	`ingredientId` INT NOT NULL ,
 	PRIMARY KEY (`ID`)
 );
 
-CREATE TABLE `IngredientAllergen` (
-	`ID` BINARY NOT NULL,
-	`ingredientId` INT NOT NULL AUTO_INCREMENT,
-	`allergenId` INT NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (`ingredientId`,`allergenId`)
-);
 
-CREATE TABLE `FovoriteRecipes` (
+CREATE TABLE `FavoriteRecipe` (
 	`ID` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`userId` INT NOT NULL AUTO_INCREMENT,
 	`recipeId` INT NOT NULL AUTO_INCREMENT,
@@ -87,14 +76,14 @@ CREATE TABLE `FovoriteRecipes` (
 CREATE TABLE `RecipeCategory` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
 	`name` varchar NOT NULL,
-	`description` varchar NOT NULL,
+	`description` varchar,
 	PRIMARY KEY (`ID`)
 );
 
 CREATE TABLE `IngredientCategory` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
 	`name` varchar NOT NULL,
-	`description` varchar NOT NULL,
+	`description` varchar ,
 	PRIMARY KEY (`ID`)
 );
 
@@ -102,13 +91,6 @@ CREATE TABLE `RecipeHasCategory` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
 	`recipeId` INT NOT NULL AUTO_INCREMENT,
 	`recipeCategory` INT NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (`ID`)
-);
-
-CREATE TABLE `IngredientHasCategory` (
-	`ID` INT NOT NULL AUTO_INCREMENT,
-	`ingredientId` INT NOT NULL AUTO_INCREMENT,
-	`ingredienCategory` INT NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (`ID`)
 );
 
@@ -125,33 +107,25 @@ CREATE TABLE `UserScaleAssignment` (
 
 ALTER TABLE `UserAllergies` ADD CONSTRAINT `UserAllergies_fk0` FOREIGN KEY (`userId`) REFERENCES `UserAccount`(`ID`);
 
-ALTER TABLE `UserAllergies` ADD CONSTRAINT `UserAllergies_fk1` FOREIGN KEY (`allergyId`) REFERENCES `Allergy`(`ID`);
-
-ALTER TABLE `Allergy` ADD CONSTRAINT `Allergy_fk0` FOREIGN KEY (`allergen`) REFERENCES `Allergen`(`ID`);
+ALTER TABLE `UserAllergies` ADD CONSTRAINT `UserAllergies_fk1` FOREIGN KEY (`allergenId`) REFERENCES `Allergen`(`ID`);
 
 ALTER TABLE `RecipeHistory` ADD CONSTRAINT `RecipeHistory_fk0` FOREIGN KEY (`userId`) REFERENCES `UserAccount`(`ID`);
 
 ALTER TABLE `RecipeHistory` ADD CONSTRAINT `RecipeHistory_fk1` FOREIGN KEY (`recipeId`) REFERENCES `Recipe`(`ID`);
 
+ALTER TABLE `Ingredient` ADD CONSTRAINT `Ingredient_fk1` FOREIGN KEY (`allergenId`) REFERENCES `Allergen`(`ID`);
+
 ALTER TABLE `RecipeIngredients` ADD CONSTRAINT `RecipeIngredients_fk0` FOREIGN KEY (`recipeId`) REFERENCES `Recipe`(`ID`);
 
 ALTER TABLE `RecipeIngredients` ADD CONSTRAINT `RecipeIngredients_fk1` FOREIGN KEY (`ingredientId`) REFERENCES `Ingredient`(`ID`);
 
-ALTER TABLE `IngredientAllergen` ADD CONSTRAINT `IngredientAllergen_fk0` FOREIGN KEY (`ingredientId`) REFERENCES `Ingredient`(`ID`);
+ALTER TABLE `FavoriteRecipe` ADD CONSTRAINT `FavoriteRecipe_fk0` FOREIGN KEY (`userId`) REFERENCES `UserAccount`(`ID`);
 
-ALTER TABLE `IngredientAllergen` ADD CONSTRAINT `IngredientAllergen_fk1` FOREIGN KEY (`allergenId`) REFERENCES `Allergen`(`ID`);
-
-ALTER TABLE `FovoriteRecipes` ADD CONSTRAINT `FovoriteRecipes_fk0` FOREIGN KEY (`userId`) REFERENCES `UserAccount`(`ID`);
-
-ALTER TABLE `FovoriteRecipes` ADD CONSTRAINT `FovoriteRecipes_fk1` FOREIGN KEY (`recipeId`) REFERENCES `Recipe`(`ID`);
+ALTER TABLE `FavoriteRecipe` ADD CONSTRAINT `FavoriteRecipe_fk1` FOREIGN KEY (`recipeId`) REFERENCES `Recipe`(`ID`);
 
 ALTER TABLE `RecipeHasCategory` ADD CONSTRAINT `RecipeHasCategory_fk0` FOREIGN KEY (`recipeId`) REFERENCES `Recipe`(`ID`);
 
 ALTER TABLE `RecipeHasCategory` ADD CONSTRAINT `RecipeHasCategory_fk1` FOREIGN KEY (`recipeCategory`) REFERENCES `RecipeCategory`(`ID`);
-
-ALTER TABLE `IngredientHasCategory` ADD CONSTRAINT `IngredientHasCategory_fk0` FOREIGN KEY (`ingredientId`) REFERENCES `Ingredient`(`ID`);
-
-ALTER TABLE `IngredientHasCategory` ADD CONSTRAINT `IngredientHasCategory_fk1` FOREIGN KEY (`ingredienCategory`) REFERENCES `IngredientCategory`(`ID`);
 
 ALTER TABLE `UserScaleAssignment` ADD CONSTRAINT `UserScaleAssignment_fk0` FOREIGN KEY (`userId`) REFERENCES `UserAccount`(`ID`);
 

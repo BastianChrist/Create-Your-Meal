@@ -10,9 +10,8 @@ import java.util.List;
 
 @Repository("recipeHistoryDAO")
 public class RecipeHistoryDAO extends GenericDAO<RecipeHistory, Integer> implements IRecipeHistoryDAO {
+
     @Override
-
-
     public List<RecipeHistory> getHistoryByUserId(Integer id) throws DaoException {
         if (id == null) {
             throw new DaoException("The id argument is required");

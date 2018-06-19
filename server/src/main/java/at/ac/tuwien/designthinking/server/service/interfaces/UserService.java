@@ -2,6 +2,7 @@ package at.ac.tuwien.designthinking.server.service.interfaces;
 
 import at.ac.tuwien.designthinking.server.dto.Allergen;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
+import at.ac.tuwien.designthinking.server.dto.RecipeHistory;
 import at.ac.tuwien.designthinking.server.dto.UserAccount;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 
@@ -22,12 +23,12 @@ public interface UserService {
 
     void  deleteUserAllergen(int userId, int allergenId) throws ServiceException;
 
-    List<Recipe> getUserRecipeHistory(int userId) throws ServiceException;
+    List<RecipeHistory> getUserRecipeHistory(int userId) throws ServiceException;
 
-    List<Recipe> getUserFavoritsRecipes(int userId) throws ServiceException;
+    List<Recipe> getUserFavoriteRecipes(int userId) throws ServiceException;
 
-    List<Recipe> addUserFavoritsRecipes(int userId) throws ServiceException;
+    List<Recipe> addUserFavoriteRecipes(int userId) throws ServiceException;
 
-    void deleteUserFavoritsRecipes(int userId) throws ServiceException;
+    void deleteUserFavoriteRecipes(int userId) throws ServiceException;
 
 }

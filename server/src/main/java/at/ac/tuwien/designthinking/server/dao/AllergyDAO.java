@@ -3,10 +3,12 @@ package at.ac.tuwien.designthinking.server.dao;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dao.interfaces.IAllergyDAO;
 import at.ac.tuwien.designthinking.server.dto.Allergy;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+@Repository
 public class AllergyDAO extends GenericDAO<Allergy,Integer> implements IAllergyDAO {
 
     @Override

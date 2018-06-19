@@ -11,6 +11,12 @@
         <class>at.ac.tuwien.designthinking.server.dto.Ingredient</class>
         <class>at.ac.tuwien.designthinking.server.dto.Recipe</class>
         <class>at.ac.tuwien.designthinking.server.dto.RecipeHistory</class>
+        <class>at.ac.tuwien.designthinking.server.dto.FavoriteRecipe</class>
+        <class>at.ac.tuwien.designthinking.server.dto.IngredientCategory</class>
+        <class>at.ac.tuwien.designthinking.server.dto.RecipeCategory</class>
+        <class>at.ac.tuwien.designthinking.server.dto.RecipeIngredients</class>
+        <class>at.ac.tuwien.designthinking.server.dto.RecipeHasCategory</class>
+        <class>at.ac.tuwien.designthinking.server.dto.UserScaleAssignment</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />

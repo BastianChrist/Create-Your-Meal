@@ -3,25 +3,21 @@ package at.ac.tuwien.designthinking.server.dto;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Created by Bastian on 27.05.2018.
- */
-
 @Entity
-public class Ingredient {
+public class IngredientCategory {
 
     @Id
-    private int id;
+    private Integer id;
 
     private String name;
 
-    private String category;
+    private String description;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -33,11 +29,11 @@ public class Ingredient {
         this.name = name;
     }
 
-    public String getCategory() {
-        return category;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

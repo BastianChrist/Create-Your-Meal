@@ -1,9 +1,12 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import at.ac.tuwien.designthinking.server.dao.FavoriteRecipeDAO;
+import at.ac.tuwien.designthinking.server.dao.RecipeHistoryDAO;
 import at.ac.tuwien.designthinking.server.dao.UserDAO;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dto.Allergen;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
+import at.ac.tuwien.designthinking.server.dto.RecipeHistory;
 import at.ac.tuwien.designthinking.server.dto.UserAccount;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import at.ac.tuwien.designthinking.server.service.interfaces.UserService;
@@ -20,6 +23,12 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDAO userDAO;
+
+    @Autowired
+    private RecipeHistoryDAO recipeHistoryDAO;
+
+    @Autowired
+    private FavoriteRecipeDAO favoriteRecipeDAO;
 
     @Autowired
     public UserServiceImpl (UserDAO userDAO){
@@ -56,23 +65,31 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Recipe> getUserRecipeHistory(int userId) throws ServiceException {
-        return null;         //TODO
+    public List<RecipeHistory> getUserRecipeHistory(int userId) throws ServiceException {
+        try {
+            return recipeHistoryDAO.getHistoryByUserId(userId);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
 
     }
 
     @Override
-    public List<Recipe> getUserFavoritsRecipes(int userId) throws ServiceException {
+    public List<Recipe> getUserFavoriteRecipes(int userId) throws ServiceException {
+        try {
+            return favoriteRecipeDAO.findFavoriteRecipesByUserId(userId);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public List<Recipe> addUserFavoriteRecipes(int userId) throws ServiceException {
         return null; //TODO
     }
 
     @Override
-    public List<Recipe> addUserFavoritsRecipes(int userId) throws ServiceException {
-        return null; //TODO
-    }
-
-    @Override
-    public void deleteUserFavoritsRecipes(int userId) throws ServiceException {
+    public void deleteUserFavoriteRecipes(int userId) throws ServiceException {
         //TODO
     }
 }

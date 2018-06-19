@@ -1,6 +1,7 @@
 package at.ac.tuwien.designthinking.server.controller;
 
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
+import at.ac.tuwien.designthinking.server.dto.IngredientCategory;
 import at.ac.tuwien.designthinking.server.service.interfaces.IngredientService;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.List;
 @RestController
 public class IngredientController {
 
+    @Autowired
     private IngredientService ingredientService;
 
     @Autowired
@@ -41,6 +43,16 @@ public class IngredientController {
         return null;
     }
 
+    @GetMapping("/ingredients/categories")
+    public List<IngredientCategory> getIngredientCategories(){
+        try {
+            return ingredientService.getCategories();
+        } catch (ServiceException e) {
+            e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
+        }
+        return null;
+    }
+/**
     @PutMapping("/ingredients/{ingredientId}")
     public Ingredient putIngredient(@PathVariable("ingredientId") int ingredientId, @RequestBody Ingredient ingredient){
         try {
@@ -50,7 +62,7 @@ public class IngredientController {
         }
         return null;
     }
-
+**/
 
 
 

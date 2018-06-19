@@ -1,6 +1,8 @@
 package at.ac.tuwien.designthinking.server.service.interfaces;
 
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
+import at.ac.tuwien.designthinking.server.dto.IngredientCategory;
+import at.ac.tuwien.designthinking.server.dto.RecipeCategory;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 
 import java.util.List;
@@ -24,12 +26,14 @@ public interface IngredientService {
      */
      List<Ingredient> getAll() throws ServiceException;
 
+     public List<IngredientCategory> getCategories() throws ServiceException;
+
     /**
-     * Returns all ingridients from a category
+     * Returns all ingredients from a category
      * @return a list of all entities from a specific category
      * @throws ServiceException
      */
-     List<Ingredient> getByCategory() throws ServiceException;
+     //List<Ingredient> getByCategory() throws ServiceException;
 
-    Ingredient changeIngredient(int id, Ingredient ingredient) throws ServiceException;
+   // Ingredient changeIngredient(int id, Ingredient ingredient) throws ServiceException;
 }

@@ -5,11 +5,13 @@ import at.ac.tuwien.designthinking.server.dao.interfaces.IUserAllergyDAO;
 
 import at.ac.tuwien.designthinking.server.dto.Allergy;
 import at.ac.tuwien.designthinking.server.dto.UserAllergies;
+import org.springframework.stereotype.Repository;
 
 
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+@Repository
 public class UserAllergyDAO extends GenericDAO<UserAllergies,Integer> implements IUserAllergyDAO {
 
     @Override

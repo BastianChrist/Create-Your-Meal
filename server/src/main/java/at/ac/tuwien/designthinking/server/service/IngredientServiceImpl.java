@@ -1,8 +1,12 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import at.ac.tuwien.designthinking.server.dao.IngredientCategoryDAO;
 import at.ac.tuwien.designthinking.server.dao.IngredientDAO;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
+import at.ac.tuwien.designthinking.server.dao.interfaces.IIngredientCategoryDAO;
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
+import at.ac.tuwien.designthinking.server.dto.IngredientCategory;
+import at.ac.tuwien.designthinking.server.dto.RecipeCategory;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import at.ac.tuwien.designthinking.server.service.interfaces.IngredientService;
 import org.slf4j.Logger;
@@ -23,9 +27,11 @@ public class IngredientServiceImpl implements IngredientService {
     private  IngredientDAO ingredientDAO;
 
     @Autowired
+    private IngredientCategoryDAO ingredientCategoryDAO;
+
+    @Autowired
     public IngredientServiceImpl(IngredientDAO ingredientDAO){this.ingredientDAO = ingredientDAO;}
 
-    //TODO
     @Override
     public Ingredient getById(int id) throws ServiceException {
         try {
@@ -45,6 +51,15 @@ public class IngredientServiceImpl implements IngredientService {
     }
 
     @Override
+    public List<IngredientCategory> getCategories() throws ServiceException {
+        try {
+            return ingredientCategoryDAO.getAll();
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+/**
+    @Override
     public List<Ingredient>  getByCategory() throws ServiceException {
         return null;
     }
@@ -53,4 +68,6 @@ public class IngredientServiceImpl implements IngredientService {
     public Ingredient changeIngredient(int id, Ingredient ingredient) throws ServiceException {
         return null;
     }
+
+    **/
 }

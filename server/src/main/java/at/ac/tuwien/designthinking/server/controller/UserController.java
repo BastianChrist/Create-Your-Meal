@@ -1,9 +1,6 @@
 package at.ac.tuwien.designthinking.server.controller;
 
-import at.ac.tuwien.designthinking.server.dto.Allergen;
-import at.ac.tuwien.designthinking.server.dto.Recipe;
-import at.ac.tuwien.designthinking.server.dto.UserAccount;
-import at.ac.tuwien.designthinking.server.dto.UserToken;
+import at.ac.tuwien.designthinking.server.dto.*;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import at.ac.tuwien.designthinking.server.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +14,9 @@ import java.util.List;
 @RestController
 public class UserController {
 
+    @Autowired
     private UserService userService;
+
     @Autowired
     public UserController (UserService userService){
         this.userService = userService;
@@ -80,7 +79,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{userId}/recipes")
-    public List<Recipe> getUserRecipeHistory(@PathVariable("userId") int userId){
+    public List<RecipeHistory> getUserRecipeHistory(@PathVariable("userId") int userId){
         try {
             return userService.getUserRecipeHistory(userId);
         } catch (ServiceException e) {
@@ -89,10 +88,10 @@ public class UserController {
         return null;
     }
 
-    @GetMapping("/users/{userId}/favorits")
-    public List<Recipe> getUserFavoritsRecipes(@PathVariable("userId") int userId){
+    @GetMapping("/users/{userId}/favorites")
+    public List<Recipe> getUserFavoritesRecipes(@PathVariable("userId") int userId){
         try {
-            return userService.getUserRecipeHistory(userId);
+            return userService.addUserFavoriteRecipes(userId);
         } catch (ServiceException e) {
             e.printStackTrace();
         }
@@ -100,19 +99,19 @@ public class UserController {
     }
 
 
-    @PostMapping("/users/{userId}/favorits")
-    public List<Recipe> addUserFavoritsRecipes(@PathVariable("userId") int userId){
+    @PostMapping("/users/{userId}/favorites")
+    public List<Recipe> addUserFavoritesRecipes(@PathVariable("userId") int userId){
         try {
-            return userService.addUserFavoritsRecipes(userId);
+            return userService.addUserFavoriteRecipes(userId);
         } catch (ServiceException e) {
             e.printStackTrace();
         }
         return null;
     }
-    @DeleteMapping("/users/{userId}/favorits")
-    public List<Recipe> deleteUserFavoritsRecipes(@PathVariable("userId") int userId){
+    @DeleteMapping("/users/{userId}/favorites")
+    public List<Recipe> deleteUserFavoritesRecipes(@PathVariable("userId") int userId){
         try {
-            userService.deleteUserFavoritsRecipes(userId);
+            userService.deleteUserFavoriteRecipes(userId);
         } catch (ServiceException e) {
             e.printStackTrace();
         }

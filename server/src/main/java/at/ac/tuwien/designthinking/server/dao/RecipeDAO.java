@@ -2,6 +2,7 @@ package at.ac.tuwien.designthinking.server.dao;
 
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dao.interfaces.IRecipeDAO;
+import at.ac.tuwien.designthinking.server.dto.Context;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
 import org.springframework.stereotype.Repository;
 
@@ -36,4 +37,17 @@ public class RecipeDAO extends GenericDAO<Recipe,Integer> implements IRecipeDAO 
             throw new DaoException(ex);
         }
     }
+
+    @Override
+    public List<Recipe> getByContext(Context context) throws DaoException {
+
+        TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) ", Recipe.class);
+        q.setParameter("isWarm", context.isWarm());
+
+        //FIlterung in der Liste mittels Iterator?
+
+        return null;
+    }
+
+
 }
