@@ -2,6 +2,7 @@ package at.ac.tuwien.designthinking.server.service;
 
 import at.ac.tuwien.designthinking.server.dao.FavoriteRecipeDAO;
 import at.ac.tuwien.designthinking.server.dao.RecipeHistoryDAO;
+import at.ac.tuwien.designthinking.server.dao.UserAllergyDAO;
 import at.ac.tuwien.designthinking.server.dao.UserDAO;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dto.Allergen;
@@ -31,6 +32,9 @@ public class UserServiceImpl implements UserService {
     private FavoriteRecipeDAO favoriteRecipeDAO;
 
     @Autowired
+    private UserAllergyDAO userAllergyDAO;
+
+    @Autowired
     public UserServiceImpl (UserDAO userDAO){
         this.userDAO = userDAO;
     }
@@ -51,7 +55,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Allergen> getUserAllergens(int userId) throws ServiceException {
-        return null; //TODO
+        try {
+            return userAllergyDAO.getUserAllergies(userId);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override

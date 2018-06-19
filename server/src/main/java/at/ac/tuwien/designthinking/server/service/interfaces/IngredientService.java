@@ -33,7 +33,7 @@ public interface IngredientService {
      * @return a list of all entities from a specific category
      * @throws ServiceException
      */
-     //List<Ingredient> getByCategory() throws ServiceException;
+     List<Ingredient> getByCategory(IngredientCategory category) throws ServiceException;
 
    // Ingredient changeIngredient(int id, Ingredient ingredient) throws ServiceException;
 }

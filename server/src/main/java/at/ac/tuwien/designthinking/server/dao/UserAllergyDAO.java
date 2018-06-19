@@ -3,7 +3,7 @@ package at.ac.tuwien.designthinking.server.dao;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dao.interfaces.IUserAllergyDAO;
 
-import at.ac.tuwien.designthinking.server.dto.Allergy;
+import at.ac.tuwien.designthinking.server.dto.Allergen;
 import at.ac.tuwien.designthinking.server.dto.UserAllergies;
 import org.springframework.stereotype.Repository;
 
@@ -15,11 +15,11 @@ import java.util.List;
 public class UserAllergyDAO extends GenericDAO<UserAllergies,Integer> implements IUserAllergyDAO {
 
     @Override
-    public List<Allergy> getUserAllergies(int userId) throws DaoException {
+    public List<Allergen> getUserAllergies(int userId) throws DaoException {
 
         try {
-            TypedQuery<Allergy> q = this.getEntityManager()
-                    .createQuery("SELECT a.name, a.allergenid, a.id FROM UserAllergies ua, Allergy a WHERE  ua.userId = (:userId) AND ua.allergyId=a.ID", Allergy.class);
+            TypedQuery<Allergen> q = this.getEntityManager()
+                    .createQuery("SELECT a.name, a.id FROM UserAllergies ua, Allergen a WHERE  ua.userId = (:userId) AND ua.allergyId=a.ID", Allergen.class);
             q.setParameter("userId", userId);
 
             return q.getResultList();
@@ -30,8 +30,9 @@ public class UserAllergyDAO extends GenericDAO<UserAllergies,Integer> implements
 
 
     @Override
-    public List<Allergy> addUserAllergen(UserAllergies userAllergy, int userId) throws DaoException {
-        return null;
+    public void addUserAllergen(UserAllergies userAllergy, int userId) throws DaoException {
+
+
     }
 
     @Override
