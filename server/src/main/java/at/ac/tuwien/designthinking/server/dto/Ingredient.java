@@ -17,6 +17,13 @@ public class Ingredient {
 
     private String category;
 
+    private int allergenId;
+
+
+    public int getAllergenId() { return allergenId;}
+
+    public void setAllergenId(int allergenId) { this.allergenId = allergenId;}
+
     public int getId() {
         return id;
     }

@@ -2,7 +2,7 @@ CREATE TABLE `UserAccount` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
 	`firstName` varchar(255) NOT NULL,
 	`lastName` varchar(255) NOT NULL,
-	`profilePicture` blob NOT NULL,
+	`profilePicture` blob,
 	`email` varchar,
 	`password` varchar,
 	PRIMARY KEY (`ID`)

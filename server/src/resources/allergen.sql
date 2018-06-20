@@ -12,3 +12,4 @@ INSERT INTO Allergen(ID,name,code)VALUES ('11','Sesamsamen und daraus gewonnene 
 INSERT INTO Allergen(ID,name,code)VALUES ('12','Schwefeldioxid und Sulfite','O');
 INSERT INTO Allergen(ID,name,code)VALUES ('13','Lupinen und daraus gewonnene Erzeugnisse','P');
 INSERT INTO Allergen(ID,name,code)VALUES ('14','Weichtiere wie Schnecken, Muscheln, Tintenfische und daraus gewonnene Erzeugnisse','R');
+INSERT INTO Allergen(ID,name,code)VALUES ('-1','Kein Allergen', '');

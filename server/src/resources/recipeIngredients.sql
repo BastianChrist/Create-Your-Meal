@@ -137,8 +137,6 @@ VALUES ('7','1','1kg');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
 VALUES ('7','47','2-3 EL');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
-VALUES ('','','');
-INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
 VALUES ('7','5','1 Prise');
 INSERT INTO RecipeIngredients (recipeId,ingredientId,amount)
 VALUES ('7','21','1 Prise');
