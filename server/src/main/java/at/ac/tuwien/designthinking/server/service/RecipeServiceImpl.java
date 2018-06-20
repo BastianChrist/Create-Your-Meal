@@ -4,6 +4,7 @@ import at.ac.tuwien.designthinking.server.dao.RecipeDAO;
 import at.ac.tuwien.designthinking.server.dao.RecipeHistoryDAO;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
 import at.ac.tuwien.designthinking.server.dto.Context;
+import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
 import at.ac.tuwien.designthinking.server.dto.RecipeHistory;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
@@ -74,6 +75,15 @@ public class RecipeServiceImpl implements RecipeService {
     public List<Recipe> getByContext(Context context)throws ServiceException{
         try {
             return recipeDAO.getByContext(context);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public List<Recipe> getRecipesByIngredient(Ingredient ingredient) throws ServiceException {
+        try {
+            return recipeDAO.getRecipesByIngredient(ingredient);
         } catch (DaoException e) {
             throw new ServiceException(e);
         }
