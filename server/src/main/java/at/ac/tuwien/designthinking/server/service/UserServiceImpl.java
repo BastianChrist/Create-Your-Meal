@@ -1,14 +1,8 @@
 package at.ac.tuwien.designthinking.server.service;
 
-import at.ac.tuwien.designthinking.server.dao.FavoriteRecipeDAO;
-import at.ac.tuwien.designthinking.server.dao.RecipeHistoryDAO;
-import at.ac.tuwien.designthinking.server.dao.UserAllergyDAO;
-import at.ac.tuwien.designthinking.server.dao.UserDAO;
+import at.ac.tuwien.designthinking.server.dao.*;
 import at.ac.tuwien.designthinking.server.dao.exception.DaoException;
-import at.ac.tuwien.designthinking.server.dto.Allergen;
-import at.ac.tuwien.designthinking.server.dto.Recipe;
-import at.ac.tuwien.designthinking.server.dto.RecipeHistory;
-import at.ac.tuwien.designthinking.server.dto.UserAccount;
+import at.ac.tuwien.designthinking.server.dto.*;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import at.ac.tuwien.designthinking.server.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +27,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserAllergyDAO userAllergyDAO;
+
+    @Autowired
+    private UserScaleAssignmentDAO userScaleAssignmentDAO;
 
     @Autowired
     public UserServiceImpl (UserDAO userDAO){
@@ -99,5 +96,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUserFavoriteRecipes(int userId) throws ServiceException {
         //TODO
+    }
+
+    @Override
+    public UserScaleAssignment getUserScaleAssignment(int userId) throws ServiceException{
+        try {
+            return userScaleAssignmentDAO.getUserScaleAssignmentByUserId(userId);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 }

@@ -1,9 +1,6 @@
 package at.ac.tuwien.designthinking.server.service.interfaces;
 
-import at.ac.tuwien.designthinking.server.dto.Allergen;
-import at.ac.tuwien.designthinking.server.dto.Recipe;
-import at.ac.tuwien.designthinking.server.dto.RecipeHistory;
-import at.ac.tuwien.designthinking.server.dto.UserAccount;
+import at.ac.tuwien.designthinking.server.dto.*;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 
 import java.util.List;
@@ -31,4 +28,5 @@ public interface UserService {
 
     void deleteUserFavoriteRecipes(int userId) throws ServiceException;
 
+    UserScaleAssignment getUserScaleAssignment(int userId) throws ServiceException;
 }

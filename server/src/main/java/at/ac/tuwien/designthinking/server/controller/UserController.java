@@ -59,6 +59,16 @@ public class UserController {
         return null;
     }
 
+    @GetMapping("/users/{userId}/scale")
+    public UserScaleAssignment getUserScaleAsssignment(@PathVariable("userId") int userId){
+        try {
+            return userService.getUserScaleAssignment(userId);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @PostMapping("/users/{userId}/allergens")
     public List<Allergen> addUserAllergen(@PathVariable("userId") int userId, @RequestBody Allergen allergen){
         try {

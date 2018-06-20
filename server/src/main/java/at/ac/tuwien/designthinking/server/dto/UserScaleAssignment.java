@@ -21,6 +21,8 @@ public class UserScaleAssignment {
 
     private Integer scale_six;
 
+    private Integer userId;
+
     public Integer getId() {
         return Id;
     }
@@ -75,5 +77,13 @@ public class UserScaleAssignment {
 
     public void setScale_six(Integer scale_six) {
         this.scale_six = scale_six;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }
