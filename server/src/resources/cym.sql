@@ -12,7 +12,7 @@ CREATE TABLE `UserAllergies` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
 	`userId` INT NOT NULL ,
 	`allergenId` INT NOT NULL ,
-	`dateAdded` DATETIME NOT NULL,
+	`dateAdded` VARCHAR NOT NULL,
 	PRIMARY KEY (`ID`)
 );
 
@@ -34,9 +34,9 @@ CREATE TABLE `Ingredient` (
 
 CREATE TABLE `RecipeHistory` (
 	`ID` INT NOT NULL AUTO_INCREMENT,
-	`userId` INT NOT NULL AUTO_INCREMENT,
-	`recipeId` INT NOT NULL AUTO_INCREMENT,
-	`cookedOn` DATETIME NOT NULL,
+	`userId` INT NOT NULL ,
+	`recipeId` INT NOT NULL ,
+	`cookedOn` VARCHAR ,
 	PRIMARY KEY (`ID`)
 );
 
@@ -67,9 +67,9 @@ CREATE TABLE `RecipeIngredients` (
 
 CREATE TABLE `FavoriteRecipe` (
 	`ID` INT NOT NULL AUTO_INCREMENT UNIQUE,
-	`userId` INT NOT NULL AUTO_INCREMENT,
-	`recipeId` INT NOT NULL AUTO_INCREMENT,
-	`favoritedOn` DATE NOT NULL,
+	`userId` INT ,
+	`recipeId` INT NOT NULL ,
+	`favoritedOn` VARCHAR ,
 	PRIMARY KEY (`userId`,`recipeId`)
 );
 
