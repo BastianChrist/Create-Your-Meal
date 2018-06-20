@@ -9,11 +9,11 @@ import at.ac.tuwien.designthinking.server.dto.*;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import at.ac.tuwien.designthinking.server.service.interfaces.IngredientService;
 import at.ac.tuwien.designthinking.server.service.interfaces.RecipeService;
+import at.ac.tuwien.designthinking.server.service.interfaces.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,17 +24,17 @@ import java.util.TreeMap;
  * Finds Recipes based on your preferences
  */
 @Service
-public class AlgortithmService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AlgortithmService.class);
+public class AlgorithmService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AlgorithmService.class);
     private static IngredientService ingredientService;
     private static RecipeService recipeService;
     private static IngredientCategoryDAO ingredientCategoryDAO;
-    private static UserScaleAssignment userScaleAssignment;
-    public AlgortithmService(IngredientService ingredientService, RecipeService recipeService, IngredientCategoryDAO ingredientCategoryDAO, UserScaleAssignment userScaleAssignment){
+    private static UserService userService;
+    public AlgorithmService(IngredientService ingredientService, RecipeService recipeService, IngredientCategoryDAO ingredientCategoryDAO, UserService userService){
         this.ingredientService = ingredientService;
         this.recipeService = recipeService;
         this.ingredientCategoryDAO = ingredientCategoryDAO;
-        this.userScaleAssignment = userScaleAssignment;
+        this.userService = userService;
     };
 
     //TODO
@@ -63,7 +63,7 @@ public class AlgortithmService {
             Map.Entry<Integer, Integer> highest = sensorData.lastEntry();
             sensorData.remove(highest.getKey());
 
-            int catId = getScaleID(highest);
+            int catId = getScaleID(highest, userId);
 
             IngredientCategory c = ingredientCategoryDAO.getCategory(catId);
             List<Ingredient> ingredientsH = null;
@@ -73,8 +73,8 @@ public class AlgortithmService {
                 e.printStackTrace();
             }
 
-            Ingredient ingredient1 = ingredientsH.get((int) (ingredientsH.size() * Math.random() - 1));
-            Ingredient ingredient2 = ingredientsH.get((int) (ingredientsH.size() * Math.random() - 1));
+            Ingredient ingredient1 = ingredientsH.get((int) ((ingredientsH.size()-1) * Math.random()));
+            Ingredient ingredient2 = ingredientsH.get((int) ((ingredientsH.size()-1) * Math.random()));
             try {
 
             switch (i) {
@@ -173,9 +173,14 @@ public class AlgortithmService {
         return recipes;
     }
 
-    public int getScaleID(Map.Entry<Integer,Integer> entry){
+    public int getScaleID(Map.Entry<Integer,Integer> entry, int userId){
         int catId;
-
+        UserScaleAssignment userScaleAssignment = null;
+        try {
+            userScaleAssignment = userService.getUserScaleAssignment(userId);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
         switch (entry.getValue()){
             case 1:
                 return catId = userScaleAssignment.getScale_one();
