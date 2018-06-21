@@ -1,0 +1,9 @@
+<div id="mainPage">
+  <div id="titel">Create your Meal</div>
+  <div id="users" class="row, center">
+    <a id="user" class="center" (click)="loginUser(user)" *ngFor="let user of users"  >
+      <img src="data:image/jpg;base64, {{user.profilePicture}}" alt="{{user.firstName}}" height="70px" width="50px" >
+    </a>
+  </div>
+</div>
+
