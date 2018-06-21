@@ -2,6 +2,7 @@ package at.ac.tuwien.designthinking.server.controller;
 
 import at.ac.tuwien.designthinking.server.dto.Context;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
+import at.ac.tuwien.designthinking.server.dto.Scale;
 import at.ac.tuwien.designthinking.server.service.interfaces.RecipeService;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;

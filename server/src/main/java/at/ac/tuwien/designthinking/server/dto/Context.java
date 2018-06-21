@@ -1,5 +1,7 @@
 package at.ac.tuwien.designthinking.server.dto;
 
+import java.util.List;
+
 /**
  * Created by schurli on 17.06.18.
  */
@@ -10,6 +12,8 @@ public class Context {
     private boolean isWarm;
 
     private Integer maxCookTime;
+
+    private List<Scale> scales;
 
     public String getType() {
         return type;
@@ -33,5 +37,14 @@ public class Context {
 
     public void setMaxCookTime(Integer maxCookTime) {
         this.maxCookTime = maxCookTime;
+    }
+
+    public void setScales(List<Scale> scales) {
+        this.scales = scales;
+    }
+
+    public List<Scale> getScales() {
+
+        return scales;
     }
 }

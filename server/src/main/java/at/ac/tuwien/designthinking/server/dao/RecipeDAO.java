@@ -42,12 +42,11 @@ public class RecipeDAO extends GenericDAO<Recipe,Integer> implements IRecipeDAO 
     @Override
     public List<Recipe> getByContext(Context context) throws DaoException {
 
-        TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) ", Recipe.class);
+        TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) AND o.type =(:type) AND o.time_needed =(:time_needed) ", Recipe.class);
         q.setParameter("isWarm", context.isWarm());
-
-        //Filterung in der Liste mittels Iterator?
-
-        return null;
+        q.setParameter("type",context.getType());
+        q.setParameter("time_needed",context.getMaxCookTime().toString());
+        return q.getResultList();
     }
 
     @Override

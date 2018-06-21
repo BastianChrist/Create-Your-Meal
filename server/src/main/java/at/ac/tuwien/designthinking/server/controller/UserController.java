@@ -1,6 +1,7 @@
 package at.ac.tuwien.designthinking.server.controller;
 
 import at.ac.tuwien.designthinking.server.dto.*;
+import at.ac.tuwien.designthinking.server.service.AlgorithmService;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 import at.ac.tuwien.designthinking.server.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,12 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-    public UserController (UserService userService){
+    private AlgorithmService algorithmService;
+
+    @Autowired
+    public UserController (UserService userService, AlgorithmService algorithmService){
         this.userService = userService;
+        this.algorithmService=algorithmService;
     }
 
     @PostMapping("/login")
@@ -28,6 +33,15 @@ public class UserController {
         return new UserToken(user.getFirstName());
     }
 
+    @GetMapping("/startScales")
+    public void startScales () {
+        algorithmService.startScales();
+    }
+
+    @GetMapping("/weights")
+    public List<Scale> getWeights(){
+        return algorithmService.getWeights();
+    }
 
     @GetMapping("/users")
     public List<UserAccount> getUsers(){
@@ -59,6 +73,11 @@ public class UserController {
         return null;
     }
 
+    @PostMapping("/users/{userId}/recipes")
+    public List<Recipe> getRecipesForWeights(@PathVariable("userId") int userId,@RequestBody Context context){
+        return algorithmService.getRecipes(userId, context, context.getScales());
+    }
+
     @GetMapping("/users/{userId}/scale")
     public UserScaleAssignment getUserScaleAsssignment(@PathVariable("userId") int userId){
         try {
@@ -88,7 +107,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/users/{userId}/recipes")
+    @GetMapping("/users/{userId}/recipesHistory")
     public List<RecipeHistory> getUserRecipeHistory(@PathVariable("userId") int userId){
         try {
             return userService.getUserRecipeHistory(userId);

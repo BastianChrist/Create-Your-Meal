@@ -3,6 +3,7 @@ package at.ac.tuwien.designthinking.server.service.interfaces;
 import at.ac.tuwien.designthinking.server.dto.Context;
 import at.ac.tuwien.designthinking.server.dto.Ingredient;
 import at.ac.tuwien.designthinking.server.dto.Recipe;
+import at.ac.tuwien.designthinking.server.dto.Scale;
 import at.ac.tuwien.designthinking.server.dto.RecipeHistory;
 import at.ac.tuwien.designthinking.server.service.exception.ServiceException;
 
