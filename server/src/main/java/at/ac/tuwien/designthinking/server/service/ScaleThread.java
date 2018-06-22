@@ -1,5 +1,7 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import org.h2.util.StringUtils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,14 +12,14 @@ public class ScaleThread extends Thread {
 
     private int scaleNumber;
     //TODO:path to raspberry adjustment
-    private String path ="/home/schurli/Dokumente/TU/MasterMedieninformatik/DesignThinking/Create-Your-Meal/server/src/resources/";
+    private String path ="/home/pi/scales/";
     private int weight;
     private boolean stopped=true;
 
 
     ScaleThread(int scaleNumber){
         this.scaleNumber=scaleNumber;
-        path=path+"pythonTest"+scaleNumber+".py";
+        path=path+"scale"+scaleNumber+".py";
     }
 
     @Override
@@ -38,8 +40,12 @@ public class ScaleThread extends Thread {
                 BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
                 weight = 0;
                 for (int i = 0; i < 2; i++) {
-                    int ret = new Integer(in.readLine()).intValue();
-                    weight = weight + ret;
+                    String line= in.readLine();
+                    if(StringUtils.isNumber(line)) {
+                        int ret = new Integer(line).intValue();
+                        System.out.println("scale " + this.scaleNumber + " value: " + ret);
+                        weight = weight + ret;
+                    }
                 }
                 weight = weight / 2;
             } catch (IOException e) {
