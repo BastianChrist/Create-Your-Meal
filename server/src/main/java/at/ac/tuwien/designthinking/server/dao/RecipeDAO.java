@@ -42,11 +42,21 @@ public class RecipeDAO extends GenericDAO<Recipe,Integer> implements IRecipeDAO 
     @Override
     public List<Recipe> getByContext(Context context) throws DaoException {
 
-        TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) AND o.type =(:type) AND o.time_needed =(:time_needed) ", Recipe.class);
-        q.setParameter("isWarm", context.isWarm());
-        q.setParameter("type",context.getType());
-        q.setParameter("time_needed",context.getMaxCookTime().toString());
-        return q.getResultList();
+
+        if (context.getType() == null){
+            TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) AND o.time_needed <= (:time_needed) ", Recipe.class);
+            q.setParameter("isWarm", context.isWarm());
+            q.setParameter("time_needed",context.getMaxCookTime());
+            return q.getResultList();
+        } else {
+            TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) AND o.type =(:type) AND o.time_needed <= (:time_needed) ", Recipe.class);
+            q.setParameter("isWarm", context.isWarm());
+            q.setParameter("type",context.getType());
+            q.setParameter("time_needed",context.getMaxCookTime());
+            return q.getResultList();
+        }
+     //   TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) AND o.type =(:type) AND o.time_needed like (:time_needed) ", Recipe.class);
+        //return q.getResultList();
     }
 
     @Override

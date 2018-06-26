@@ -20,7 +20,7 @@ public class Recipe {
 
     private boolean isWarm;
 
-    private String time_needed;
+    private Integer time_needed;
 
     private int servings;
 
@@ -74,11 +74,11 @@ public class Recipe {
         isWarm = warm;
     }
 
-    public String getTime_needed() {
+    public Integer getTime_needed() {
         return time_needed;
     }
 
-    public void setTime_needed(String time_needed) {
+    public void setTime_needed(Integer time_needed) {
         this.time_needed = time_needed;
     }
 

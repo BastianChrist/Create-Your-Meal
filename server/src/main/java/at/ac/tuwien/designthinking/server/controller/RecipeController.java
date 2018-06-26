@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,6 +43,28 @@ public class RecipeController {
     public Recipe getRecipe(@PathVariable("recipeId") int recipeId){
         try {
             return recipeService.getById(recipeId);
+        } catch (ServiceException e) {
+            e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
+        }
+        return null;
+    }
+
+    @GetMapping("/recipes/test")
+    public List<Recipe> getTestRecipes(){
+        try {
+            Context context = new Context();
+                    context.setWarm(true);
+                    context.setMaxCookTime(45);
+                    List<Scale> scales = new ArrayList<>();
+                    scales.add(new Scale(1,10));
+            scales.add(new Scale(2,12));
+            scales.add(new Scale(3,14));
+            scales.add(new Scale(4,16));
+            scales.add(new Scale(5,17));
+            scales.add(new Scale(6,18));
+            context.setScales(scales);
+
+                    return recipeService.getByContext(context);
         } catch (ServiceException e) {
             e.printStackTrace(); //TODO: Exception Mechanismus für UI festlegen
         }

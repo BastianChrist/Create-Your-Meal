@@ -46,7 +46,7 @@ CREATE TABLE `Recipe` (
 	`type` varchar,
 	`difficulty` varchar NOT NULL,
 	`isWarm` BOOLEAN NOT NULL,
-	`time_needed` VARCHAR NOT NULL,
+	`time_needed` INT NOT NULL,
 	`servings` INT NOT NULL,
 	`source` varchar NOT NULL,
 	`dateAdded` DATETIME,

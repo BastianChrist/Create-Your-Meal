@@ -1,5 +1,5 @@
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES('Palatschinken Grundrezept','1','TRUE','5 - 15','4','ichkoche.at','Für das Palatschinken Grundrezept den Teig zubereiten. Dafür die Eier aufschlagen und gut verquirlen. Die Milch mit dem Mehl rasch glatt rühren, die Eier einmengen und alles mit einer Prise Salz versehen. Die geschmolzene Butter langsam unterrühren. Sollten im Palatschinkenteig Mehlklumpen sein, den Teig durch ein großes Sieb streichen.
+VALUES('Palatschinken Grundrezept','1','TRUE','15','4','ichkoche.at','Für das Palatschinken Grundrezept den Teig zubereiten. Dafür die Eier aufschlagen und gut verquirlen. Die Milch mit dem Mehl rasch glatt rühren, die Eier einmengen und alles mit einer Prise Salz versehen. Die geschmolzene Butter langsam unterrühren. Sollten im Palatschinkenteig Mehlklumpen sein, den Teig durch ein großes Sieb streichen.
 Eine flache Pfanne (ideal sind Palatschinken-Pfannen) erhitzen und etwas Butter zerlassen. Mit einem Schöpflöffel soviel Teigmasse einfüllen, dass der Boden gerade dünn bedeckt ist. In die Mitte einleeren und durch Herumschwenken der Pfanne gleichmäßig verteilen.
 Die Palatschinke nun auf einer Seite goldbraun werden lassen. Dabei mit mittlerer Hitze arbeiten. Lässt sich die Palatschinke in der Pfanne gut rütteln, kann man sie wenden.
 Die zweite Seite ebenfalls goldbraun werden lassen.
@@ -15,7 +15,7 @@ Palatschinken sind eine der beliebtesten österreichischen Nachspeisen. Sie kön
 4 EL Butter (zerlassen, zum Herausbacken)
 ');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Karottensuppe','1','True','30 - 45','4','ichkoche.at','Karotten in Scheiben schneiden. Kartoffel in Würfel schneiden.
+VALUES ('Karottensuppe','1','True','45','4','ichkoche.at','Karotten in Scheiben schneiden. Kartoffel in Würfel schneiden.
 Zwiebel, Karotten, Kartoffel und eine Prise Salz in einen Topf geben und bei geringer Hitze rösten.
 Die Gemüsesuppe zugießen.
 Aufkochen lassen, dann die Hitze reduzieren und ca. 30 Minuten köcheln lassen.
@@ -34,7 +34,7 @@ Pfeffer
 Vollkornbrot (in Würfel geschnitten und in Pfanne kurz geröstet)
 Petersilie');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Spaghetti Bolognese','3','true','30 - 45','4','ichkoche.at','Für die Spaghetti Bolognese das Faschierte in Olivenöl anbraten, ab und zu umrühren und anschließend salzen. Die Karotten putzen und fein würfeln. Zwiebeln in Ringe schneiden. Alles zusammen mit den Tomaten zum Faschierten geben und zugedeckt rund 10 Minuten mitschmoren lassen. Die Sauce mit etwas Wasser ablöschen, mit dem Suppenwürfel, Salz, Pfeffer und einer Prise Zucker abschmecken. 5 Minuten weiterköcheln lassen. Die Spaghetti in Salzwasser bissfest kochen, abtropfen lassen und mit der Sauce servieren.','250 g Faschiertes
+VALUES ('Spaghetti Bolognese','3','true','45','4','ichkoche.at','Für die Spaghetti Bolognese das Faschierte in Olivenöl anbraten, ab und zu umrühren und anschließend salzen. Die Karotten putzen und fein würfeln. Zwiebeln in Ringe schneiden. Alles zusammen mit den Tomaten zum Faschierten geben und zugedeckt rund 10 Minuten mitschmoren lassen. Die Sauce mit etwas Wasser ablöschen, mit dem Suppenwürfel, Salz, Pfeffer und einer Prise Zucker abschmecken. 5 Minuten weiterköcheln lassen. Die Spaghetti in Salzwasser bissfest kochen, abtropfen lassen und mit der Sauce servieren.','250 g Faschiertes
 1 EL Olivenöl
 2 Stück Karotten
 2 Stück Zwiebeln
@@ -44,7 +44,7 @@ VALUES ('Spaghetti Bolognese','3','true','30 - 45','4','ichkoche.at','Für die S
 250 g Spaghetti
 ');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Lamm-Burger mit Ratatouille und Blauschimmelkäse','4','true','60+','4','ichkoche.at','Für die Lamm-Patties alle Zutaten in einer Schüssel verrühren, bis die Masse beginnt sich zu verbinden. Fleischmasse in einen Ring drücken, welcher denselben Durchmesser hat, wie die Burger Buns. Laibchen ("Patties") in einer Pfanne mit etwas Olivenöl auf beiden Seiten für ca. 2 Minuten braten. Patties mit dem Blauschimmelkäse belegen und im Backrohr mit Gratinier-Funktion für 1–2 Minuten überbacken.
+VALUES ('Lamm-Burger mit Ratatouille und Blauschimmelkäse','4','true','60','4','ichkoche.at','Für die Lamm-Patties alle Zutaten in einer Schüssel verrühren, bis die Masse beginnt sich zu verbinden. Fleischmasse in einen Ring drücken, welcher denselben Durchmesser hat, wie die Burger Buns. Laibchen ("Patties") in einer Pfanne mit etwas Olivenöl auf beiden Seiten für ca. 2 Minuten braten. Patties mit dem Blauschimmelkäse belegen und im Backrohr mit Gratinier-Funktion für 1–2 Minuten überbacken.
 Die Zucchini waschen, längs halbieren und in ca. 5 mm dicke Würfel schneiden. Paprika waschen, halbieren und entkernen. Fruchtfleisch in kleine Würfel schneiden. Jungzwiebeln putzen und schräg in sehr feine Scheiben/Ringe schneiden.
 In einem kleinen Topf etwas Olivenöl erhitzen, Paprika, Zucchini und Jungzwiebeln darin scharf anbraten. Feinblättrig geschnittenen Knoblauch dazugeben, Tomatenmark unterrühren und mit etwas Wasser ablöschen. Mit Salz, Pfeffer und einer Prise Zucker würzen und abschmecken. Etwas einkochen lassen und mit dem abgezupften Thymian vollenden.
 Burger Buns halbieren und in einer Pfanne ohne Fett rösten.
@@ -104,7 +104,7 @@ Salz
 Pfeffer
 2-3 EL Olivenöl');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Boeuf Stroganoff','4','true','25-30','4','ichkoche.at','Für Boeuf Stroganoff zunächst den Lungenbraten in etwa 7 mm breite Streifen schneiden.
+VALUES ('Boeuf Stroganoff','4','true','30','4','ichkoche.at','Für Boeuf Stroganoff zunächst den Lungenbraten in etwa 7 mm breite Streifen schneiden.
 Die Zwiebeln fein hacken, Champignons in Scheiben und Gurkerl in feine Streifen schneiden.
 Anschließend das Fleisch mit Salz und Pfeffer würzen und in heißem Öl rasch von beiden Seiten 2 Minuten anbraten. Aus der Pfanne heben und warm stellen.
 Nun die Zwiebeln im verbliebenen Fett anschwitzen, Champignons beigeben und durchrösten. Mit Fond oder Suppe ablöschen und aufkochen lassen.
@@ -122,7 +122,7 @@ Salz
 Pfeffer (aus der Mühle)
 Paprikapukver (edelsüß)');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Gegrillter grüner Spargel mit Speck','1','true','10 - 15','2','ichkoche.at','Für den gegrillten grünen Spargel mit Speck zunächst den Spargel vorbereiten. Dazu die holzigen Enden wegschneiden. Grüner Spargel muss nicht geschält werden.
+VALUES ('Gegrillter grüner Spargel mit Speck','1','true','15','2','ichkoche.at','Für den gegrillten grünen Spargel mit Speck zunächst den Spargel vorbereiten. Dazu die holzigen Enden wegschneiden. Grüner Spargel muss nicht geschält werden.
 Den Spargel auf einem Teller mit ein paar Spritzern Olivenöl beträufeln. Salzen und pfeffern. Je drei Spargelstangen mit einem Streifen Speck einwickeln. Die Spargelpäckchen auf den heißen Grill oder in eine bereits heiße Bratpfanne legen und von allen Seiten grillen.
 Den gegrillten grünen Spargel mit Speck als Beilage zu Steak oder Gegrilltem servieren.
 Tipp
@@ -133,7 +133,7 @@ Olivenöl
 Salz (grobkörnig)
 Pfeffer (aus der Mühle)');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Kartoffel-Gemüse-Gröstl mit Spiegelei','3','true','15 - 25','2','ichkoche.at','Für das Kartoffel-Gemüse-Gröstl mit Spiegelei die Kartoffeln schälen, in Scheibe schneiden und in einer Pfanne mit Butterschmalz braun braten. Karotten waschen, in Scheiben schneiden und kurz blanchieren. Ebenfalls Bohnen und Mais (wenn tiefgekühlt) blanchieren.
+VALUES ('Kartoffel-Gemüse-Gröstl mit Spiegelei','3','true','25','2','ichkoche.at','Für das Kartoffel-Gemüse-Gröstl mit Spiegelei die Kartoffeln schälen, in Scheibe schneiden und in einer Pfanne mit Butterschmalz braun braten. Karotten waschen, in Scheiben schneiden und kurz blanchieren. Ebenfalls Bohnen und Mais (wenn tiefgekühlt) blanchieren.
 Zwiebel hacken, Knoblauch pressen und zu den Kartoffeln geben. Gemüse abschrecken und ebenfalls mit Kartoffeln mitrösten und würzen.
 Ein Ei in eine separate Pfanne aufschlagen und kurz braten. Kartoffel-Gemüse-Mischung in einen Teller geben und Spiegelei oben drauf legen. Das Kartoffel-Gemüse-Gröstl mit Spiegelei gleich servieren.
 Tipp
@@ -148,7 +148,7 @@ Salz
 Pfeffer
 Muskat');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Hühnergeschnetzeltes mit Paprika','2','true','15 - 20','2','ichkoche.at','Zuerst den Reis mit der richtigen Menge Wasser aufstellen.
+VALUES ('Hühnergeschnetzeltes mit Paprika','2','true','20','2','ichkoche.at','Zuerst den Reis mit der richtigen Menge Wasser aufstellen.
 Für Hühnergeschnetzeltes die Hühnerfilets in mundgerechte Stücke schneiden, mit Salz und Pfeffer würzen und in Mehl wenden.
 Die Zwiebel und Paprika fein schneiden. Das Fleisch in einer Pfanne mit Olivenöl anbraten, Zwiebel und Paprika zugeben und anbraten.
 Paprikapulver und Tomatenmark hinzugeben und mit Suppe und dem Sauerrahm aufgiesen. Einige Minuten einköcheln lassen.
@@ -165,7 +165,7 @@ Pfeffer
 1 EL Tomatenmark
 Salz');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Tofu-Gemüse-Wok','3','true','20 - 25','4','ichkoche.at','Für den schnellen Tofu-Gemüse-Wok zunächst das Gemüse putzen, waschen und in mundgerechte Streifen schneiden. Tofu ebenfalls in kleinere Würfel schneiden.
+VALUES ('Tofu-Gemüse-Wok','3','true','25','4','ichkoche.at','Für den schnellen Tofu-Gemüse-Wok zunächst das Gemüse putzen, waschen und in mundgerechte Streifen schneiden. Tofu ebenfalls in kleinere Würfel schneiden.
 Einen Wok oder eine schwere (am besten gusseiserne) Pfanne erhitzen. Öl eingießen, erhitzen und die Tofu-Streifen darin anbraten. Das geschnittene Gemüse samt Chilischoten beigeben und ca. 2 Minuten weiterbraten. Ingwer, Knoblauch, Sojasauce und Ahornsirup hinzufügen und 1-2 Minuten mitbraten.
 Den schnellen Tofu-Gemüse-Wok mit Salz, Pfeffer und Sesamöl abschmecken. In Schalen anrichten, mit Sesamkörnern bestreuen und servieren.
 Tipp
@@ -182,7 +182,7 @@ Salz
 Sesamkörner (zum Garnieren)
 Pfeffer');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Geschmortes Huhn mit Garnelen','5','true','60 - 90','4','ichkoche.at','Das Huhn der Länge nach halbieren und in Viertel hacken bzw. mit der Geflügelschere teilen. Die Hühnerteile in eine Schüssel geben, mit Sojasauce übergießen und 30-45 Minuten marinieren. Währenddessen die Teile ab und an wenden und gut mit Sojasauce einstreichen. Nun in einem Wok oder einer schweren Pfanne reichlich Öl erhitzen. Die Hühnerteile aus der Marinade nehmen, abtropfen lassen und im heißen Öl rundum frittieren. Herausnehmen und auf Küchenkrepp abtropfen lassen. Übrig gebliebenes Öl abgießen und den Wok rasch mit einer Küchenrolle auswischen. Die verbliebene Sojasaucen-Marinade gemeinsam mit Reiswein, Honig, Frühlingszwiebeln sowie Sternanis hineingeben und aufkochen lassen. Die Hühnerteile wieder einlegen, so viel heißes Wasser zugießen, dass die Hühnerteile fast bedeckt sind, und 40-50 Minuten weichköcheln lassen. Hühnerstücke wieder herausheben und die Flüssigkeit bei großer Hitze stark einkochen lassen. Inzwischen die Pilze in Streifen schneiden (getrocknete Pilze vorher 20 Minuten in lauwarmem Wasser einweichen). Karotte und Lauch in Scheiben, die Hühnerinnereien in kleinere Würfel schneiden. Das Hühnerfleisch von den Knochen lösen, ebenfalls in mundgerechte Stücke schneiden und warmhalten. Das vorbereitete Gemüse gemeinsam mit den Erbsenschoten, Garnelen und Hühnerinnereien in den Wok geben, aufkochen lassen und 3-4 Minuten auf kleiner Flamme ziehen lassen. Mit in etwas Wasser aufgelöster Maisstärke binden. Das Hühnerfleisch anrichten, die fertige Sauce darübergießen und mit etwas Sesamöl beträufeln.','1 Huhn mit ca. 1,5 kg
+VALUES ('Geschmortes Huhn mit Garnelen','5','true','90','4','ichkoche.at','Das Huhn der Länge nach halbieren und in Viertel hacken bzw. mit der Geflügelschere teilen. Die Hühnerteile in eine Schüssel geben, mit Sojasauce übergießen und 30-45 Minuten marinieren. Währenddessen die Teile ab und an wenden und gut mit Sojasauce einstreichen. Nun in einem Wok oder einer schweren Pfanne reichlich Öl erhitzen. Die Hühnerteile aus der Marinade nehmen, abtropfen lassen und im heißen Öl rundum frittieren. Herausnehmen und auf Küchenkrepp abtropfen lassen. Übrig gebliebenes Öl abgießen und den Wok rasch mit einer Küchenrolle auswischen. Die verbliebene Sojasaucen-Marinade gemeinsam mit Reiswein, Honig, Frühlingszwiebeln sowie Sternanis hineingeben und aufkochen lassen. Die Hühnerteile wieder einlegen, so viel heißes Wasser zugießen, dass die Hühnerteile fast bedeckt sind, und 40-50 Minuten weichköcheln lassen. Hühnerstücke wieder herausheben und die Flüssigkeit bei großer Hitze stark einkochen lassen. Inzwischen die Pilze in Streifen schneiden (getrocknete Pilze vorher 20 Minuten in lauwarmem Wasser einweichen). Karotte und Lauch in Scheiben, die Hühnerinnereien in kleinere Würfel schneiden. Das Hühnerfleisch von den Knochen lösen, ebenfalls in mundgerechte Stücke schneiden und warmhalten. Das vorbereitete Gemüse gemeinsam mit den Erbsenschoten, Garnelen und Hühnerinnereien in den Wok geben, aufkochen lassen und 3-4 Minuten auf kleiner Flamme ziehen lassen. Mit in etwas Wasser aufgelöster Maisstärke binden. Das Hühnerfleisch anrichten, die fertige Sauce darübergießen und mit etwas Sesamöl beträufeln.','1 Huhn mit ca. 1,5 kg
 4 Hühnerherzen
 1 Hühnerleber
 8 Garnelen
@@ -200,7 +200,7 @@ VALUES ('Geschmortes Huhn mit Garnelen','5','true','60 - 90','4','ichkoche.at','
 Pflanzenöl zum Frittieren
 ');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Gedämpfte Wantan-Täschchen mit Shrimps und Schweinefleisch','4','true','45 - 60','4','ichkoche.at','Shrimps- und Krebsfleisch fein schneiden, die Pilze klein hacken und beides gemeinsam mit dem Faschierten, mit Zucker, Salz, Pfeffer und Sesamöl vermischen. Mit der Speisestärke gut vermengen und den gehackten Koriander einrühren. Die Teigblätter auflegen und jeweils etwas Füllmasse in die Mitte setzen. Nach Belieben rund ausstechen und zu halbmondförmigen Täschchen zusammenklappen oder die Ecken so übereinanderklappen, dass ein Dreieck entsteht. Die Teigränder dabei mit Wasser befeuchten und gut festdrücken. Auf einen Dämpfeinsatz platzieren und im Bambuskörbchen (oder Topf) zugedeckt 8-10 Minuten dämpfen. Wontons mit etwas Sesamöl beträufeln und mit frisch gehacktem oder geriebenem Ingwer bestreuen. Am besten im Körbchen servieren.
+VALUES ('Gedämpfte Wantan-Täschchen mit Shrimps und Schweinefleisch','4','true','60','4','ichkoche.at','Shrimps- und Krebsfleisch fein schneiden, die Pilze klein hacken und beides gemeinsam mit dem Faschierten, mit Zucker, Salz, Pfeffer und Sesamöl vermischen. Mit der Speisestärke gut vermengen und den gehackten Koriander einrühren. Die Teigblätter auflegen und jeweils etwas Füllmasse in die Mitte setzen. Nach Belieben rund ausstechen und zu halbmondförmigen Täschchen zusammenklappen oder die Ecken so übereinanderklappen, dass ein Dreieck entsteht. Die Teigränder dabei mit Wasser befeuchten und gut festdrücken. Auf einen Dämpfeinsatz platzieren und im Bambuskörbchen (oder Topf) zugedeckt 8-10 Minuten dämpfen. Wontons mit etwas Sesamöl beträufeln und mit frisch gehacktem oder geriebenem Ingwer bestreuen. Am besten im Körbchen servieren.
 Tipp
 Die Füllmasse dieser Wontons kann beliebig, etwa durch gehackte geröstete Erdnüsse, frisch gehackten Ingwer oder Chili, abgewandelt werden.','20 Stück Wantan-Teigblätter (Zutaten für 20 Stück)
 200 g Faschiertes Schweinefleisch (möglichst mager)
@@ -223,7 +223,7 @@ Beides auf einem Teller dekorativ anordnen, mit Olivenöl und Essig beträufeln 
 Salz
 Basilikumblätter (grob zerzupft)');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Cordon Bleu','3','true','30 - 45','4','ichkoche.at','Erdäpfel im Wasser aufstellen. Dann schälen in Spalten schneiden und mit Petersilie und ein wenig Salz in Butter in der Pfanne schwenken.
+VALUES ('Cordon Bleu','3','true','45','4','ichkoche.at','Erdäpfel im Wasser aufstellen. Dann schälen in Spalten schneiden und mit Petersilie und ein wenig Salz in Butter in der Pfanne schwenken.
 Für das Cordon Bleu die Schnitzel auflegen, dünn ausklopfen und dabei darauf achten, dass sie nicht einreißen. Auf beiden Seiten salzen und pfeffern. Auf eine Hälfte jedes Schnitzels eine Scheibe Schinken, eine Scheibe Käse und wieder Schinken legen.
 Zusammenklappen und die Ränder entweder mit dem Schnitzelklopfer fest zusammenklopfen oder mit Zahnstochern fixieren.
 Eier in einem Suppenteller verschlagen. Nun Schnitzerl zuerst in Mehl wenden, durch das Ei ziehen und in Bröseln wälzen.
@@ -240,7 +240,7 @@ Zitronenspalten (zum Garnieren)
 Salz
 Pfeffer');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Entenbrust mit Gänselebersauce und Birnen-Kartoffel-Gratin','5','true','90 - 120','4','ichkoche.at','Für die Entenbrust mit Gänselebersauce die Kartoffeln ca. 15 Minuten kochen. Sie sollen nicht weich sein, sondern noch schnittfest.
+VALUES ('Entenbrust mit Gänselebersauce und Birnen-Kartoffel-Gratin','5','true','120','4','ichkoche.at','Für die Entenbrust mit Gänselebersauce die Kartoffeln ca. 15 Minuten kochen. Sie sollen nicht weich sein, sondern noch schnittfest.
 Schälen und in Scheiben schneiden. Die Birne schälen, entkernen und in dünne Scheiben schneiden. Sofort mit Zitronensaft beträufeln.
 Creme fraiche, das Ei, Senf und die Gewürze in einer Schüssel mit dem Schneebesen gut abrühren.
 Die Kartoffelscheiben abwechselnd mit den Birnenscheiben in vier kleine Gratinförmchen schichten und mit der Sauce begießen.
@@ -277,7 +277,7 @@ Salz
 Muskatnuß
 Pfeffer');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Zucchini-Lauch-Quiche mit Mozzarella','3','true','60 - 90','4','ichkoche.at','Für die Zucchini-Lauch-Quiche den Backofen auf 200 °C vorheizen. Eine Quicheform mit 30 cm Durchmesser mit Backpapier auslegen. Den Mürbteig ausrollen und die Quicheform damit auskleiden.
+VALUES ('Zucchini-Lauch-Quiche mit Mozzarella','3','true','90','4','ichkoche.at','Für die Zucchini-Lauch-Quiche den Backofen auf 200 °C vorheizen. Eine Quicheform mit 30 cm Durchmesser mit Backpapier auslegen. Den Mürbteig ausrollen und die Quicheform damit auskleiden.
 Den Teig mit Backpapier auslegen, mit Bohnen oder Reis beschweren und ca. 20 Minuten Blindbacken. Die Bohnen bzw. Reis und das Backpapier entsorgen und die Temperatur des Backofens auf 180 °C reduzieren.
 Die Eier aufschlagen, den Mascarpone, den kleingeschnittenen Mozzarella und den geriebenen Emmentaler sehr gut unterrühren. Mit den Kräutern, Salz und Pfeffer würzen.
 Den Zucchino in dünne Streifen und den Lauch in dünne Ringe schneiden. Die Zwiebel fein würfeln. Das Gemüse auf dem Quicheboden verteilen und die Eiermasse darübergießen.
@@ -309,7 +309,7 @@ die Tortilla zuerst auf 2 Seiten einklappen und dann von hinten nach vorne einro
 2 Stück Salatblätter
 Öl (zum Braten)');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Chili con Carne','3','true','60 - 90','8','ichkoche.at','Die Paradeiser blanchieren (überbrühen), die Haut abziehen, entkernen und das Fruchtfleisch würfeln. Die Chilischoten fein hacken, zuvor die Kerne entfernen.
+VALUES ('Chili con Carne','3','true','90','8','ichkoche.at','Die Paradeiser blanchieren (überbrühen), die Haut abziehen, entkernen und das Fruchtfleisch würfeln. Die Chilischoten fein hacken, zuvor die Kerne entfernen.
 Zwiebeln fein hacken und in heißem Butterschmalz goldgelb rösten. Fleisch und Knoblauchzehen dazugeben und mitrösten. Die Paradeiser dazugeben, kurz durchrühren und mit der Rindsuppe aufgießen. Nun alle Gewürze zugeben und 45 Minuten köcheln lassen - falls nötig, noch Suppe zugießen.
 Maiskörner und Kidneybohnen in ein Sieb geben und mit kaltem Wasser abspülen. Gut abtropfen lassen und unter das Chili mengen. Noch einmal kurz durchkochen und das Chili con Carne heiß servieren.
 Tipp
@@ -367,7 +367,7 @@ Ahornsirup (nach Belieben)
 Vanillezucker
 Zimt');
 INSERT INTO Recipe(name,type, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Topfenkipferl','Frühstück','3','false','45 - 60','5','ichkoche.at','Für die Topfenkipferl die handwarme, weiche Butter mit dem Mehl vermengen.
+VALUES ('Topfenkipferl','Frühstück','3','false','60','5','ichkoche.at','Für die Topfenkipferl die handwarme, weiche Butter mit dem Mehl vermengen.
 Nach und nach Topfen, Zitronensafttropfen und das Ei einkneten. Alles zu einem glatten Teig verkneten und für 20 Min abkühlen lassen.
 Dann den Teig dünn ausrollen und zu Dreiecke schneiden. Unter der längeren Kannte einen Mokkalöffel Marmelade draufgeben und zu einem Kipferl einrollen.
 Bei 190 Grad backen bis die Kipferl goldbraun sind.
@@ -433,7 +433,7 @@ Wer lieber keinen Schinken im Nudelsalat möchte, lässt ihn weg oder serviert i
 Salz
 Pfeffer (schwarz aus der Mühle)');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Die perfekte Grillstelze','4','true','90 - 120','4','ichkoche.at','Für die perfekte Grillstelze zunächst die Stelze vorkochen. Dafür die Stelze in einem Topf mit heißem Wasser zustellen – die Stelze muss ganz mit Wasser bedeckt sein. Mit der ganzen Zwiebel, Kümmel, Lorbeerblatt, Thymian, 3 geschälten, halbierten Knoblauchzehen, Pfefferkörnern und reichlich Salz würzen. Die Stelze in diesem Sud 40 Minuten bei geringer Hitze köcheln.
+VALUES ('Die perfekte Grillstelze','4','true','120','4','ichkoche.at','Für die perfekte Grillstelze zunächst die Stelze vorkochen. Dafür die Stelze in einem Topf mit heißem Wasser zustellen – die Stelze muss ganz mit Wasser bedeckt sein. Mit der ganzen Zwiebel, Kümmel, Lorbeerblatt, Thymian, 3 geschälten, halbierten Knoblauchzehen, Pfefferkörnern und reichlich Salz würzen. Die Stelze in diesem Sud 40 Minuten bei geringer Hitze köcheln.
 Herausnehmen, leicht auskühlen lassen und die Schwarte quer zum Knochen alle Zentimeter einschneiden. Vorsicht – nur die Haut, nicht das Fleisch einschneiden!
 Mit dem restlichen, in Scheiben geschnittenen Knoblauch spicken und mit Salz einreiben.
 Die Stelze auf den Spieß stecken und bei indirekter Hitze und geschlossenem Deckel bei ca. 160 °C grillen.
@@ -449,7 +449,7 @@ Wenn man die perfekte Grillstelze während des Grillens immer wieder mit Bier ei
 Salz
 Drehspieß (evtl.)');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Tagliatelle mit Lachs-Rahm-Sauce','2','true','20 - 30','4','ichkoche.at','Für die Tagliatelle mit Lachs-Rahm-Sauce die Nudeln bissfest kochen, abseihen. In der Zwischenzeit den Lachs etwas antauen und diesen in Stücke schneiden.
+VALUES ('Tagliatelle mit Lachs-Rahm-Sauce','2','true','30','4','ichkoche.at','Für die Tagliatelle mit Lachs-Rahm-Sauce die Nudeln bissfest kochen, abseihen. In der Zwischenzeit den Lachs etwas antauen und diesen in Stücke schneiden.
 Die Zwiebel fein hacken und im heißen Olivenöl goldbraun anbraten. Die Lachsstücke dazu geben und kurz mitrösten.
 Mit Schlagobers aufgießen, den Sauerrahm gut unterrühren, 5 Minuten köcheln lassen und mit Salz, Pfeffer, Zitronensaft, Knoblauch und Suppenwürze nach Geschmack würzen.
 Die bissfest gekochten Tagliatelle mit Lachs-Rahm-Sauce auf Tellern anrichten und mit frischer Petersilie bestreuen.','500 g Tagliatelle (oder andere Nudeln)
@@ -464,7 +464,7 @@ Frische Petersilie
 Pfeffer (nach Geschmack)
 Zitronensaft (nach Geschmack)');
 INSERT INTO Recipe(name, difficulty, isWarm, time_needed,servings,source, instructions, ingredients)
-VALUES ('Gebratene Schweinsripperln','3','true','60 - 90','4','ichkoche.at','Für Gebratene Schweinsripperln für die Marinade alle Zutaten gut verrühren oder mixen und die Ripperln mindestens einen Tag vor dem Braten mit der Marinade einreiben.
+VALUES ('Gebratene Schweinsripperln','3','true','90','4','ichkoche.at','Für Gebratene Schweinsripperln für die Marinade alle Zutaten gut verrühren oder mixen und die Ripperln mindestens einen Tag vor dem Braten mit der Marinade einreiben.
 Dann die Ripperln auf ein Blech geben und im vorgeheizten Backrohr bei ca. 165°C 40–55 Minuten knusprig braten. Dabei mehrmals wenden.
 Als Beilage zu den Schweinsripperln empfehlen wir Knoblauch- oder Stangenweißbrot, Salate und Saucen nach Geschmack
 Tipp
