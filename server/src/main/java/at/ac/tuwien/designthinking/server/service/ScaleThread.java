@@ -17,72 +17,64 @@ public class ScaleThread extends Thread {
     private int scaleNumber;
     //TODO:path to raspberry adjustment
     private String path ="/home/pi/scales/";
+    private BufferedReader scaleReader;
+
+   // private String path ="/home/schurli/Dokumente/TU/MasterMedieninformatik/DesignThinking/Create-Your-Meal/server/src/resources/";
+
     private int oldWeight=0;
     private int newWeight=0;
-    private int multiple=0;
     private boolean stopped=true;
 
     public ScaleThread(ScalesController listener,int scaleNumber){
         this.listener=listener;
         this.scaleNumber=scaleNumber;
         path=path+"scale"+scaleNumber+".py";
+        ProcessBuilder pb = new ProcessBuilder(path);
+        pb.redirectErrorStream(true);
+        try {
+            Process p = pb.start();
+            scaleReader= new BufferedReader(new InputStreamReader(p.getInputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
     @Override
-    public void run(){
-        System.out.println("MyScale "+scaleNumber+" running ");
-        while(true) {
-            if(stopped){
+    public void run() {
+
+        while (true) {
+            if (stopped) {
                 try {
                     Thread.sleep(Long.MAX_VALUE);
                 } catch (InterruptedException e) {
-                    stopped=false;
+                    stopped = false;
                 }
             }
             try {
-                ProcessBuilder pb = new ProcessBuilder(path);
-                pb.redirectErrorStream(true);
-                Process p = pb.start();
-                BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-                oldWeight=newWeight;
+                String line;
                 newWeight = 0;
-                    String line= in.readLine();
-                    if(StringUtils.isNumber(line)) {
+                while ((line = scaleReader.readLine()) != null || stopped) {
+                    if (StringUtils.isNumber(line)) {
                         newWeight = new Integer(line).intValue();
-                        System.out.println("scale " + this.scaleNumber + " value: " + newWeight);
                     }
-               // if(updateWeight()){
-                    listener.fireWeights();
-                //}
+                    if(newWeight>oldWeight+5 || newWeight < oldWeight-5) {
+                        oldWeight=newWeight;
+                        listener.fireWeights();
+                    }
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         }
     }
-
     public int getNewWeight(){
         return newWeight;
     }
     public int getScaleNumber() {
         return scaleNumber;
     }
-    public void setStopped(boolean stopped){
-        this.stopped=stopped;
-    }
-
-    public boolean updateWeight() {
-        if(oldWeight==0 && newWeight != 0)
-        {
-            return true;
-        }
-        if (oldWeight != 0) {
-            int newMultiple = newWeight / oldWeight;
-            newMultiple = Math.round(newMultiple);
-            if (newMultiple != multiple) {
-                multiple = newMultiple;
-                return true;
-            }
-        }
-        return false;
+    public void clear(){
+        this.stopped=true;
+        this.newWeight=0;
     }
 }

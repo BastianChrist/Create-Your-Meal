@@ -44,4 +44,6 @@ public interface IngredientService {
      List<Ingredient> getByCategory(IngredientCategory category) throws ServiceException;
 
    // Ingredient changeIngredient(int id, Ingredient ingredient) throws ServiceException;
+
+    IngredientCategory getIngredientCategoryById (int id) throws ServiceException;
 }

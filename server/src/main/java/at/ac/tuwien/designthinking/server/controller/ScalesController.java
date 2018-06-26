@@ -34,11 +34,11 @@ public class ScalesController {
     @Autowired
     public  ScalesController(AlgorithmService algorithmService){
         this.algorithmService=algorithmService;
-        scale1.start();
-        scale2.start();
+      //  scale1.start();
+      //  scale2.start();
         scale3.start();
-        scale4.start();
-        scale5.start();
+     //   scale4.start();
+      //  scale5.start();
         scale6.start();
     }
 
@@ -46,7 +46,6 @@ public class ScalesController {
     @SendTo("/weights")
     public List<Scale> getWeights() throws Exception {
         startScales();
-        Thread.sleep(5000);
         return readWeights();
     }
 
@@ -75,12 +74,12 @@ public class ScalesController {
         }
     }
     public void stopScales(){
-        scale1.setStopped(true);
-        scale2.setStopped(true);
-        scale3.setStopped(true);
-        scale4.setStopped(true);
-        scale5.setStopped(true);
-        scale6.setStopped(true);
+        scale1.clear();
+        scale2.clear();
+        scale3.clear();
+        scale4.clear();
+        scale5.clear();
+        scale6.clear();
 
 
     }

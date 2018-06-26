@@ -81,11 +81,13 @@ public class IngredientServiceImpl implements IngredientService {
             throw new ServiceException(e);
         }
     }
-/**
-    @Override
-    public Ingredient changeIngredient(int id, Ingredient ingredient) throws ServiceException {
-        return null;
-    }
 
-    **/
+    @Override
+    public IngredientCategory getIngredientCategoryById(int id)throws ServiceException{
+        try {
+            return ingredientCategoryDAO.getCategory(id);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
 }
