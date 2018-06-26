@@ -22,6 +22,9 @@ public class UserController {
     private AlgorithmService algorithmService;
 
     @Autowired
+    ScalesController scalesController;
+
+    @Autowired
     public UserController (UserService userService, AlgorithmService algorithmService){
         this.userService = userService;
         this.algorithmService=algorithmService;
@@ -30,17 +33,8 @@ public class UserController {
     @PostMapping("/login")
     public UserToken login(@RequestBody UserAccount user)
     {
+        //TODO: algorithmService.startScales();
         return new UserToken(user.getFirstName());
-    }
-
-    @GetMapping("/startScales")
-    public void startScales () {
-        algorithmService.startScales();
-    }
-
-    @GetMapping("/weights")
-    public List<Scale> getWeights(){
-        return algorithmService.getWeights();
     }
 
     @GetMapping("/users")
@@ -75,6 +69,7 @@ public class UserController {
 
     @PostMapping("/users/{userId}/recipes")
     public List<Recipe> getRecipesForWeights(@PathVariable("userId") int userId,@RequestBody Context context){
+        scalesController.stopScales();
         return algorithmService.getRecipes(userId, context, context.getScales());
     }
 

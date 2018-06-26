@@ -1,6 +1,8 @@
 package at.ac.tuwien.designthinking.server.service;
 
+import at.ac.tuwien.designthinking.server.controller.ScalesController;
 import org.h2.util.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,14 +12,18 @@ import java.io.InterruptedIOException;
 
 public class ScaleThread extends Thread {
 
+    private ScalesController listener;
+
     private int scaleNumber;
     //TODO:path to raspberry adjustment
     private String path ="/home/pi/scales/";
-    private int weight;
+    private int oldWeight=0;
+    private int newWeight=0;
+    private int multiple=0;
     private boolean stopped=true;
 
-
-    ScaleThread(int scaleNumber){
+    public ScaleThread(ScalesController listener,int scaleNumber){
+        this.listener=listener;
         this.scaleNumber=scaleNumber;
         path=path+"scale"+scaleNumber+".py";
     }
@@ -38,30 +44,45 @@ public class ScaleThread extends Thread {
                 pb.redirectErrorStream(true);
                 Process p = pb.start();
                 BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-                weight = 0;
-                for (int i = 0; i < 2; i++) {
+                oldWeight=newWeight;
+                newWeight = 0;
                     String line= in.readLine();
                     if(StringUtils.isNumber(line)) {
-                        int ret = new Integer(line).intValue();
-                        System.out.println("scale " + this.scaleNumber + " value: " + ret);
-                        weight = weight + ret;
+                        newWeight = new Integer(line).intValue();
+                        System.out.println("scale " + this.scaleNumber + " value: " + newWeight);
                     }
-                }
-                weight = weight / 2;
+               // if(updateWeight()){
+                    listener.fireWeights();
+                //}
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public int getWeight(){
-        return weight;
+    public int getNewWeight(){
+        return newWeight;
     }
-
     public int getScaleNumber() {
         return scaleNumber;
     }
     public void setStopped(boolean stopped){
         this.stopped=stopped;
+    }
+
+    public boolean updateWeight() {
+        if(oldWeight==0 && newWeight != 0)
+        {
+            return true;
+        }
+        if (oldWeight != 0) {
+            int newMultiple = newWeight / oldWeight;
+            newMultiple = Math.round(newMultiple);
+            if (newMultiple != multiple) {
+                multiple = newMultiple;
+                return true;
+            }
+        }
+        return false;
     }
 }
