@@ -34,11 +34,11 @@ public class ScalesController {
     @Autowired
     public  ScalesController(AlgorithmService algorithmService){
         this.algorithmService=algorithmService;
-      //  scale1.start();
-      //  scale2.start();
+        scale1.start();
+        scale2.start();
         scale3.start();
-     //   scale4.start();
-      //  scale5.start();
+        scale4.start();
+        scale5.start();
         scale6.start();
     }
 
