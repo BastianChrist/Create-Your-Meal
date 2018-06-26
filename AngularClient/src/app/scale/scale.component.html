@@ -1,13 +1,45 @@
-<div class="col" id="contextPage">
-  <div class="row">
-    <div>Create-Your-Meal</div>
-    <div>Uhrzeit</div>
-    <div>User</div>
+<div class="" id="scaleCategories">
+  <div class="row header">
+    <div class="column left" (click)="startPage()"><h3>Create-Your-Meal</h3></div>
+    <div class="column center"></div>
+    <div class="column right"><h3><span>Bild</span><span>Max</span></h3></div>
   </div>
   <div class="row">
-    <div class="col">Mahlzeit</div>
-    <div class="col">Typ</div>
-    <div class="col">Wieviel Zeit hast du?</div>
+    <div class="column center"><h1>Gewichte deine Kategorien</h1></div>
   </div>
-  <div>Weiter</div>
+  <div class="row">
+  <div class="column left"></div>
+  <div id="scales" class="column">
+    <div id="scale2">
+      <h3 class="scale_vertical_name">{{scaleName1}}</h3>
+      <h1 class="scale_vertical">{{scale1}}</h1>
+    </div>
+          <div id="scale1">
+            <h3 class="scale_vertical_name">{{scaleName2}}</h3>
+            <h1 class="scale_vertical">{{scale2}}</h1>
+          </div>
+          <div id="scale3">
+            <h3 class="scale_horizontal_name">{{scaleName3}}</h3>
+            <h1 class="scale_horizontal">{{scale3}}</h1>
+          </div>
+          <div id="scale4">
+            <h3 class="scale_horizontal_name">{{scaleName4}}</h3>
+            <h1 class="scale_horizontal">{{scale4}}</h1>
+          </div>
+          <div id="scale5">
+            <h3 class="scale_horizontal_name">{{scaleName5}}</h3>
+            <h1 class="scale_horizontal">{{scale5}}</h1>
+          </div>
+          <div id="scale6">
+            <h3 class="scale_horizontal_name">{{scaleName6}}</h3>
+            <h1 class="scale_horizontal">{{scale6}}</h1>
+          </div>
+  </div>
+  <div class="column right"></div>
+  </div>
+  <div class="row">
+
+      <button id="context" class="column center" (click)="changeContext()">Context ändern</button>
+      <button id="submit" class="column center" (click)="submit()">Weiter</button>
+  </div>
 </div>

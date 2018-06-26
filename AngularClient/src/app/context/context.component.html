@@ -1,13 +1,55 @@
-<div class="col" id="contextPage">
-  <div class="row">
-    <div>Create-Your-Meal</div>
-    <div>Uhrzeit</div>
-    <div>User</div>
+<div class="col mainPage" id="contextPage">
+  <div class="row header">
+    <div class="column left" (click)="startPage()"><h3>Create-Your-Meal</h3></div>
+    <div class="column center"></div>
+    <div class="column right"><h3><span>Bild</span><span>Max</span></h3></div>
   </div>
   <div class="row">
-    <div class="col">Mahlzeit</div>
-    <div class="col">Typ</div>
-    <div class="col">Wieviel Zeit hast du?</div>
+    <div id="mealContainer" class="column left">
+        <h2 id="mealHeading">Mahlzeit</h2>
+        <div>
+          <label class="container" (click)="setMeal('Frühstück')">Frühstück
+            <input type="radio" checked="checked" name="radio" >
+            <span class="checkmark"></span>
+          </label>
+          <label class="container" (click)="setMeal('Mittagessen')">Mittagessen
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container" (click)="setMeal('Abendessen')">Abendessen
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+    </div>
+    <div class="column right"><h2>Wieviel Zeit hast du maximal?</h2>
+    <div>
+      <label class="container"  (click)="setTime(15)">15 min
+        <input type="radio" checked="checked" name="radio1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container" (click)="setTime(30)">30 min
+        <input type="radio" name="radio1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container" (click)="setTime(45)">45 min
+        <input type="radio" name="radio1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container" (click)="setTime(60)">60 min
+        <input type="radio" name="radio1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container" (click)="setTime(120)">mehr als 60 min
+        <input type="radio" name="radio1">
+        <span class="checkmark"></span>
+      </label>
+    </div>
   </div>
-  <div>Weiter</div>
+  </div>
+  <div class="row">
+    <div class="column center">
+    <button id="submit" class="column center" (click)="submit()">Weiter</button>
+    </div>
+  </div>
 </div>

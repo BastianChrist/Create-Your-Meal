@@ -5,11 +5,12 @@ import {AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {LoginService} from "./service/login.service";
 import {LoginComponent} from "./login/login.component";
-import { AppRoutingModule } from './app-routing.module';
-import { StorageServiceModule} from 'angular-webstorage-service';
+import {AppRoutingModule } from './app-routing.module';
+import {StorageServiceModule} from 'angular-webstorage-service';
 import {ContextComponent} from "./context/context.component";
 import {ScaleComponent} from "./scale/scale.component";
 import {RecipeList} from "./recipe-list/recipe-list";
+import {RecipeService} from "./service/recipe.service";
 
 
 
@@ -28,7 +29,7 @@ import {RecipeList} from "./recipe-list/recipe-list";
     AppRoutingModule,
     StorageServiceModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

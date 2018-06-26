@@ -4,6 +4,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {User} from "../domain/user";
+import {Recipe} from "../domain/recipe";
 import {Observable} from "rxjs";
 
 
@@ -28,4 +29,6 @@ export class LoginService {
     return this.http.post(this.API + '/login', JSON.stringify(user));
 
   }
+
+
 }

@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/login',pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path:'step_1', component: ContextComponent},
-  {path:'scaleCategories', component: ScaleComponent},,
+  {path:'scaleCategories', component: ScaleComponent},
   {path:'recipeList',component:RecipeList},
   {path: '**', redirectTo: '/login',pathMatch: 'full'}
 ];

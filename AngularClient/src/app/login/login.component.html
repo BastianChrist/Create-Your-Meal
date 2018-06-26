@@ -1,9 +1,16 @@
 <div id="mainPage">
-  <div id="titel">Create your Meal</div>
-  <div id="users" class="row, center">
-    <a id="user" class="center" (click)="loginUser(user)" *ngFor="let user of users"  >
-      <img src="data:image/jpg;base64, {{user.profilePicture}}" alt="{{user.firstName}}" height="70px" width="50px" >
-    </a>
+  <div class="overlay">
+    <div id="placeholder"></div>
+    <div id="logo"><img src="../../assets/logo_transparent.png" alt="Create Your Meal" height="180px" width="680px"></div>
+      <div id="users" class="row" >
+          <div  class="column user" (click)="loginUser(user)" *ngFor="let user of users">
+            <a class="center row">
+              <img src="../../assets/max.jpg" alt="Max" height="70px" width="50px" >
+            </a>
+            <span id="userName" class="center row">{{user.firstName}}</span>
+          </div>
+
+  </div>
   </div>
 </div>
 

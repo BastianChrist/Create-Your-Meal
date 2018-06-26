@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="" id="scaleCategories">
+  <div class="row header">
+    <div class="column left" (click)="startPage()"><h3>Create-Your-Meal</h3></div>
+    <div class="column center"></div>
+    <div class="column right"><h3><span>Bild</span><span>Max</span></h3></div>
+  </div>
+  <div class="row">
+    <div class="column center"><h1>Wähle dein Rezept</h1></div>
+  </div>
+  <div class="row">
+    <div class="column center" *ngFor="let recipe of recipes">
+      <h4>{{recipe.name}}</h4>
+      <span class="row">Portionen: {{recipe.servings}}</span>
+      <span class="row">Kochdauer: {{recipe.time_needed}}min</span>
+      <span class="row">Zutaten: {{recipe.ingredients}}</span>
+      <button id="details" class="column center" (click)="details()">Details</button>
+    </div>
+  </div>
+  <div id="container_again" class="row center">
+    <button id="again" class="column center" (click)="again()">Gewichtung ändern</button>
+  </div>
+</div>

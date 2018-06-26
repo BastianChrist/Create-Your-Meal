@@ -22,11 +22,14 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@stomp/stompjs": "^4.0.6",
+    "angular-webstorage": "^0.1.2",
     "angular-webstorage-service": "^1.0.2",
-    "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26"
+    "sockjs-client": "^1.1.5",
+    "zone.js": "^0.8.26",
+    "@stomp/stompjs":"^4.0.6"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.3",
