@@ -29,16 +29,11 @@ public class AlgorithmService {
     private static IngredientCategoryDAO ingredientCategoryDAO;
     private static UserService userService;
 
-
-
-
-
     public AlgorithmService(IngredientService ingredientService, RecipeService recipeService, IngredientCategoryDAO ingredientCategoryDAO, UserService userService){
         this.ingredientService = ingredientService;
         this.recipeService = recipeService;
         this.ingredientCategoryDAO = ingredientCategoryDAO;
         this.userService = userService;
-
     };
 
     public List<Recipe> getRecipes(int userId, Context context, List<Scale> scales) {
@@ -77,34 +72,34 @@ public class AlgorithmService {
             } catch (ServiceException e) {
                 e.printStackTrace();
             }
-            Ingredient ingredient1 = ingredientsH.get((int) ((ingredientsH.size()-1) * Math.random()));
-            Ingredient ingredient2 = ingredientsH.get((int) ((ingredientsH.size()-1) * Math.random()));
+        //    Ingredient ingredient1 = ingredientsH.get((int) ((ingredientsH.size()-1) * Math.random()));
+        //    Ingredient ingredient2 = ingredientsH.get((int) ((ingredientsH.size()-1) * Math.random()));
             try {
 
             switch (i) {
                 case 0:
-                    recipesPrio1 = recipeService.getRecipesByIngredient(ingredient1);
-                    recipesPrio1.addAll(recipeService.getRecipesByIngredient(ingredient2));
+                    recipesPrio1 = recipeService.getByIngredientlist(ingredientsH);
+                    //recipesPrio1.addAll(recipeService.getRecipesByIngredient(ingredient2));
                     break;
                 case 1:
-                    recipesPrio2 = recipeService.getRecipesByIngredient(ingredient1);
-                    recipesPrio2.addAll(recipeService.getRecipesByIngredient(ingredient2));
+                    recipesPrio2 = recipeService.getByIngredientlist(ingredientsH);
+                    //recipesPrio2.addAll(recipeService.getRecipesByIngredient(ingredient2));
                     break;
                 case 2:
-                    recipesPrio3 = recipeService.getRecipesByIngredient(ingredient1);
-                    recipesPrio3.addAll(recipeService.getRecipesByIngredient(ingredient2));
+                    recipesPrio3 = recipeService.getByIngredientlist(ingredientsH);
+                    //recipesPrio3.addAll(recipeService.getRecipesByIngredient(ingredient2));
                     break;
                 case 3:
-                    recipesPrio4 = recipeService.getRecipesByIngredient(ingredient1);
-                    recipesPrio4.addAll(recipeService.getRecipesByIngredient(ingredient2));
+                    recipesPrio4 = recipeService.getByIngredientlist(ingredientsH);
+                    //recipesPrio4.addAll(recipeService.getRecipesByIngredient(ingredient2));
                     break;
                 case 4:
-                    recipesPrio5 = recipeService.getRecipesByIngredient(ingredient1);
-                    recipesPrio5.addAll(recipeService.getRecipesByIngredient(ingredient2));
+                    recipesPrio5 = recipeService.getByIngredientlist(ingredientsH);
+                    //recipesPrio5.addAll(recipeService.getRecipesByIngredient(ingredient2));
                     break;
                 case 5:
-                    recipesPrio6 = recipeService.getRecipesByIngredient(ingredient1);
-                    recipesPrio6.addAll(recipeService.getRecipesByIngredient(ingredient2));
+                    recipesPrio6 = recipeService.getByIngredientlist(ingredientsH);
+                    //recipesPrio6.addAll(recipeService.getRecipesByIngredient(ingredient2));
                     break;
             }
             }catch (ServiceException e){
@@ -120,31 +115,43 @@ public class AlgorithmService {
 
         for (Recipe r: recipesContext) {
             if(recipesPrio1!=null && recipesPrio1.contains(r)){
+                System.out.println("rezeptePrio1 "+r.getName());
+
                 recipes1.add(r);
             }
         }
         for (Recipe r:recipes1) {
             if(recipesPrio2!=null && recipesPrio2.contains(r)){
+                System.out.println("rezeptePrio2 "+r.getName());
+
                 recipes2.add(r);
             }
         }
         for (Recipe r:recipes2) {
             if(recipesPrio3!=null && recipesPrio3.contains(r)){
+                System.out.println("rezeptePrio3 "+r.getName());
+
                 recipes3.add(r);
             }
         }
         for (Recipe r:recipes3) {
             if(recipesPrio4!=null && recipesPrio4.contains(r)){
+                System.out.println("rezeptePrio4 "+r.getName());
+
                 recipes4.add(r);
             }
         }
         for (Recipe r:recipes4) {
             if(recipesPrio5!=null && recipesPrio5.contains(r)){
+                System.out.println("rezeptePrio5 "+r.getName());
+
                 recipes5.add(r);
             }
         }
         for (Recipe r:recipes5) {
-            if(recipesPrio5!=null && recipesPrio5.contains(r)){
+            if(recipesPrio6!=null && recipesPrio6.contains(r)){
+                System.out.println("rezeptePrio6 "+r.getName());
+
                 recipes6.add(r);
             }
         }
@@ -152,28 +159,36 @@ public class AlgorithmService {
 
         recipes.addAll(recipes6);
         if (recipes.size()>=3) {
+            Collections.shuffle(recipes);
             return recipes;
         }
         recipes.addAll(recipes5);
         if (recipes.size()>=3) {
+            Collections.shuffle(recipes);
             return recipes;
         }
         recipes.addAll(recipes4);
         if (recipes.size()>=3) {
+            Collections.shuffle(recipes);
             return recipes;
         }
         recipes.addAll(recipes3);
         if (recipes.size()>=3) {
+            Collections.shuffle(recipes);
             return recipes;
         }
         recipes.addAll(recipes2);
         if (recipes.size()>=3) {
+            Collections.shuffle(recipes);
             return recipes;
         }
-        recipes.addAll(recipes1);if (recipes.size()>=3) {
+        recipes.addAll(recipes1);
+        if (recipes.size()>=3) {
+            Collections.shuffle(recipes);
             return recipes;
         }
         recipes.addAll(recipesContext);
+        Collections.shuffle(recipes);
         return recipes;
     }
 

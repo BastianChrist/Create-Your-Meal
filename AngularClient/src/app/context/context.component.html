@@ -2,7 +2,7 @@
   <div class="row header">
     <div class="column left" (click)="startPage()"><h3>Create-Your-Meal</h3></div>
     <div class="column center"></div>
-    <div class="column right"><h3><span>Bild</span><span>Max</span></h3></div>
+    <div class="column right"><h3><span></span><span class="center">{{user.firstName}}</span></h3></div>
   </div>
   <div class="row">
     <div id="mealContainer" class="column left">
@@ -22,7 +22,20 @@
           </label>
         </div>
     </div>
-    <div class="column right"><h2>Wieviel Zeit hast du maximal?</h2>
+    <div class="column">
+      <h2 class="center" >Warm oder kalt</h2>
+      <div>
+        <label class="container" (click)="setWarm(true)">Warm
+          <input type="radio" checked="checked" name="radio2" >
+          <span class="checkmark"></span>
+        </label>
+        <label class="container" (click)="setWarm(false)">Kalt
+          <input type="radio" name="radio2">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+    <div class="column right"><h2>Zeit maximal?</h2>
     <div>
       <label class="container"  (click)="setTime(15)">15 min
         <input type="radio" checked="checked" name="radio1">

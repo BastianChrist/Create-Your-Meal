@@ -88,4 +88,13 @@ public class RecipeServiceImpl implements RecipeService {
             throw new ServiceException(e);
         }
     }
+
+    @Override
+    public List<Recipe> getByIngredientlist(List<Ingredient> ingredients) throws ServiceException {
+        try {
+            return recipeDAO.getRecipesByIngredientlist(ingredients);
+        }catch (Exception e){
+            throw new ServiceException(e);
+        }
+    }
 }

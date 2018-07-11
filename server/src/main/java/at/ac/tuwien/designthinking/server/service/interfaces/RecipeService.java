@@ -41,4 +41,6 @@ public interface RecipeService {
 
     public List<Recipe> getRecipesByIngredient(Ingredient ingredient) throws ServiceException;
 
+    public List<Recipe> getByIngredientlist(List<Ingredient> ingredients) throws ServiceException;
+
 }

@@ -2,6 +2,7 @@ package at.ac.tuwien.designthinking.server.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Objects;
 
 /**
  * Created by Bastian on 27.05.2018.
@@ -128,5 +129,19 @@ public class Recipe {
 
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recipe recipe = (Recipe) o;
+        return id == recipe.id;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id);
     }
 }

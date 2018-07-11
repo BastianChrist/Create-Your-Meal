@@ -8,6 +8,7 @@ import at.ac.tuwien.designthinking.server.dto.Recipe;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository("recipedao")
@@ -43,7 +44,7 @@ public class RecipeDAO extends GenericDAO<Recipe,Integer> implements IRecipeDAO 
     public List<Recipe> getByContext(Context context) throws DaoException {
 
 
-        if (context.getType() == null){
+        if (!"Frühstück".equals(context.getType())){
             TypedQuery<Recipe> q = this.getEntityManager().createQuery("SELECT o FROM Recipe o WHERE o.isWarm =(:isWarm) AND o.time_needed <= (:time_needed) ", Recipe.class);
             q.setParameter("isWarm", context.isWarm());
             q.setParameter("time_needed",context.getMaxCookTime());
@@ -76,5 +77,35 @@ public class RecipeDAO extends GenericDAO<Recipe,Integer> implements IRecipeDAO 
         }
     }
 
+  /*  @Override
+    public List<Recipe> getRecipesByIngredientlist(List<Ingredient> ingredients) throws DaoException {
+        try{
+            TypedQuery<Recipe> q = this.getEntityManager().createQuery("Select r from Recipe r, RecipeIngredients ri Where recipeId = r.id and ri.ingredientId in (:ingredients)",Recipe.class);
+            q.setParameter("ingredients", ingredients.toString());
+            return q.getResultList();
+        }catch (Exception e){
+            throw new DaoException(e);
+        }
+    }
+*/
+
+    public List<Recipe> getRecipesByIngredientlist(List<Ingredient> ingredients) throws DaoException {
+        try {
+
+            List<Recipe> recipes = new ArrayList<>();
+
+            for(Ingredient i:ingredients){
+                TypedQuery<Recipe> q = this.getEntityManager().createQuery("Select r from Recipe r, RecipeIngredients ri Where ri.ingredientId = (:ingredients) AND recipeId = r.id", Recipe.class);
+                q.setParameter("ingredients", i.getId());
+                recipes.addAll(q.getResultList());
+            }
+
+
+
+            return recipes;
+        } catch (Exception e) {
+            throw new DaoException(e);
+        }
+    }
 
 }

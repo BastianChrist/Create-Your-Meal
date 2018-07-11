@@ -29,4 +29,6 @@ public interface IRecipeDAO extends IGenericDAO<Recipe,Integer>{
     public List<Recipe> getByContext(Context context) throws DaoException;
 
     public List<Recipe> getRecipesByIngredient (Ingredient ingredient) throws DaoException;
+
+    public List<Recipe> getRecipesByIngredientlist(List<Ingredient> ingredients) throws DaoException;
 }

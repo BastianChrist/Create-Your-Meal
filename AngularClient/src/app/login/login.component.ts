@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   loginUser(user: User){
     this.storage.set("userId", user.id);
+    this.storage.set("user",user);
     this.router.navigate(['step_1']);
   }
 }

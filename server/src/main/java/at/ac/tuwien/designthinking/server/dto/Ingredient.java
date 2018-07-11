@@ -10,6 +10,12 @@ import javax.persistence.Id;
 @Entity
 public class Ingredient {
 
+    @Override
+    public String toString() {
+        return  id+"";
+
+    }
+
     @Id
     private int id;
 

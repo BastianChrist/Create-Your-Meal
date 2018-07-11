@@ -7,6 +7,7 @@ import {Scale} from "../domain/scale";
 import {Context} from "../domain/context";
 import {RecipeService} from "../service/recipe.service";
 import {Recipe} from "../domain/recipe";
+import {User} from "../domain/user";
 
 
 
@@ -35,6 +36,8 @@ export class ScaleComponent implements OnInit {
   private scale6:number;
   private scaleName6: string;
 
+  user:User;
+
 
 
 
@@ -42,6 +45,8 @@ export class ScaleComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user= this.storage.get("user");
+
 
     this.initializeWebSocketConnection();
     this.storage.set("recipes",null);
@@ -103,9 +108,11 @@ export class ScaleComponent implements OnInit {
   }
 
   submit(){
+    var type= this.storage.get("type");
     var warm= this.storage.get("warm");
     var time = this.storage.get("time");
     var userId =this.storage.get("userId");
+    var type=this.storage.get("type");
     let scaleList = new Array();
     this.stompClient.disconnect();
     scaleList.push(new Scale(1,this.scale1));
@@ -114,7 +121,7 @@ export class ScaleComponent implements OnInit {
     scaleList.push(new Scale(4,this.scale4));
     scaleList.push(new Scale(5,this.scale5));
     scaleList.push(new Scale(6,this.scale6));
-    let context = new Context(time,warm,scaleList);
+    let context = new Context(time,warm,type,scaleList);
     this.recipeService.getRecipesForWeights(userId,context).then(recipes => {
       this.storage.set("recipes",recipes);
       this.router.navigate(['recipeList']);

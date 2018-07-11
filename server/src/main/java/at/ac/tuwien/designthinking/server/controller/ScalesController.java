@@ -24,8 +24,8 @@ public class ScalesController {
     @Autowired
     AlgorithmService algorithmService;
 
-    private final ScaleThread scale1 = new ScaleThread(this,1);
-    private final ScaleThread scale2 = new ScaleThread(this,2);
+    private final ScaleThread scale1 = new ScaleThread(this,2);
+    private final ScaleThread scale2 = new ScaleThread(this,1);
     private final ScaleThread scale3 = new ScaleThread(this,3);
     private final ScaleThread scale4 = new ScaleThread(this,4);
     private final ScaleThread scale5 = new ScaleThread(this,5);

@@ -28,8 +28,7 @@
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "sockjs-client": "^1.1.5",
-    "zone.js": "^0.8.26",
-    "@stomp/stompjs":"^4.0.6"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.3",
